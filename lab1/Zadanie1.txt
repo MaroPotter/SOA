@@ -1,0 +1,3 @@
+1. Poczytać coś na temat serwletów - co to jest i jak działa?
+2. Umieć i wiedzieć czego się można po serwerze aplikacyjnym spodziewać - część "administracyjno-zarządcza" - dokumentacja wildFly - przeglądnąć
+3. Poczytać o JSF-ach odpowiedni rozdział z książki
