@@ -1,0 +1,4 @@
+.idea/
+out/
+wildfly-18.0.1.Final/
+*.iml
