@@ -13,7 +13,10 @@
    <h:form>
       <h:outputLabel> Podaj swoje dane: </h:outputLabel> <br/>
       PESEL <h:inputText/> <br/>
-      WIEK <h:inputText value="#{Losowanie.wiek}"/> <br/>
+      WIEK <h:inputText value="#{Losowanie.wiek}" validatorMessage="ELOELO">
+            <f:validateLongRange minimum="0" maximum="120"  />
+         </h:inputText>
+      <br/>
       IMIE <h:inputText value="#{Losowanie.imie}"/> <br/>
 
       <h:commandButton value="Wyślij" action="#{Losowanie.wyslij}" >

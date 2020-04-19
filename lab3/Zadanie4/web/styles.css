@@ -1,0 +1,25 @@
+.bookTable {
+    border-collapse:collapse;
+    border: 2px solid #000000;
+}
+
+.bookTableHeader {
+    text-align:center;
+    background:none repeat scroll 0 0 #B5B5B5;
+    border: 1px solid #000000;
+    border-bottom: 2px solid #000000;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+.bookTableColumn {
+    border: 1px solid #000000;
+}
+.bookTableOddRow {
+    text-align:center;
+    background:none repeat scroll 0 0 #FFFFFF;
+}
+
+.bookTableEvenRow {
+    text-align:center;
+    background:none repeat scroll 0 0 #D3D3D3;
+}
