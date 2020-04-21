@@ -7,6 +7,7 @@ public class Book {
     private double price;
     private String currency;
     private int numberOfPages;
+    boolean selected;
 
     public Book (String title, String author, String type, double price, String currency, int numberOfPages) {
         this.title = title;
@@ -15,6 +16,8 @@ public class Book {
         this.price = price;
         this.currency = currency;
         this.numberOfPages = numberOfPages;
+        this.selected = false;
+
     }
 
     public String getTitle() {
@@ -41,6 +44,10 @@ public class Book {
         return numberOfPages;
     }
 
+    public boolean isSelected() {
+        return selected;
+    }
+
     public void setTitle(String title) {
         this.title = title;
     }
@@ -63,5 +70,9 @@ public class Book {
 
     public void setNumberOfPages(int numberOfPages) {
         this.numberOfPages = numberOfPages;
+    }
+
+    public void setSelected(boolean selected) {
+        this.selected = selected;
     }
 }

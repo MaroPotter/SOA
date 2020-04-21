@@ -4,51 +4,104 @@
 <html xmlns="http://www.w3.org/1999/xhtml"
       xmlns:h="http://xmlns.jcp.org/jsf/html"
       xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
-      xmlns:f="http://xmlns.jcp.org/jsf/core">
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:p="http://primefaces.org/ui" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:schemaLocation="http://primefaces.org/ui ">
 <h:head>
-   <title>JSF tutorial</title>
+   <title> JSF </title>
    <link rel="stylesheet" type="text/css" href="styles.css"/>
-
 
 </h:head>
 <h:body>
-      <h1>Owned books</h1>
-      <h:form>
-   <h:dataTable value = "#{userData.books}" var = "book"
-                styleClass = "bookTable"
-                headerClass = "bookTableHeader"
-                rowClasses = "bookTableOddRow, bookTableEvenRow"
-                columnClasses = "bookTableColumn, bookTableColumn, bookTableColumn, bookTableColumn, bookTableColumn, bookTableColumn,"
-                cellpadding="10"
-         >
-      <h:column>
-         <f:facet name = "header" >Title</f:facet>
-         #{book.title}
-      </h:column>
+   <h1>Owned books</h1>
+   <h:form>
+      <h:dataTable value="#{BookStore.books}" var="book"
+                   styleClass="bookTable"
+                   headerClass="bookTableHeader"
+                   rowClasses="bookTableOddRow, bookTableEvenRow"
+                   columnClasses="bookTableColumn, bookTableColumn, bookTableColumn, bookTableColumn, bookTableColumn, bookTableColumn,"
+                   cellpadding="10"
+      >
+         <h:column>
+            <f:facet name="header">Title</f:facet>
+            #{book.title}
+         </h:column>
+         <h:column>
+            <f:facet name="header">Author</f:facet>
+            #{book.author}
+         </h:column>
 
-      <h:column>
-         <f:facet name = "header">Author</f:facet>
-         #{book.author}
-      </h:column>
-
-      <h:column>
-         <f:facet name = "header">Type</f:facet>
-         #{book.type}
-      </h:column>
-
-      <h:column>
-         <f:facet name = "header">Price</f:facet>
-         #{book.price}
-      </h:column>
-      <h:column>
-         <f:facet name = "header">Currency</f:facet>
-         #{book.currency}
-      </h:column>
-      <h:column>
-         <f:facet name = "header">Amount of pages </f:facet>
-         #{book.numberOfPages}
-      </h:column>
-   </h:dataTable>
+         <h:column>
+            <f:facet name="header">Type</f:facet>
+            #{book.type}
+         </h:column>
+         <h:column>
+            <f:facet name="header">Price</f:facet>
+            #{book.price}
+         </h:column>
+         <h:column>
+            <f:facet name="header">Currency</f:facet>
+            #{book.currency}
+         </h:column>
+         <h:column>
+            <f:facet name="header">Amount of pages </f:facet>
+            #{book.numberOfPages}
+         </h:column>
+      </h:dataTable>
    </h:form>
+
+   <br/>
+   <br/>
+   <br/>
+
+   <h:form id="theForm">
+      <f:ajax render="theForm outputs messages bookTableForm" event="change">
+
+         <h3>Filters:</h3>
+         Title: <h:selectBooleanCheckbox value="#{TitleFilter.filterByTitle}"/>
+         <h:inputText value="#{TitleFilter.title}" rendered = "#{TitleFilter.filterByTitle}"/>
+         <br/>
+         Author: <h:selectBooleanCheckbox value="#{AuthorFilter.filterByAuthor}"/>
+         <h:inputText value="#{AuthorFilter.author}" rendered="#{AuthorFilter.filterByAuthor}"/>
+         <br/>
+         Type: <h:selectBooleanCheckbox value="#{TypeFilter.filterByType}"/>
+         <h:inputText value="#{TypeFilter.type}" rendered="#{TypeFilter.filterByType}"/>
+         <br/>
+         Price: <h:selectBooleanCheckbox value="#{PriceFilter.filterByPrice}"/>
+         <h:outputLabel rendered = "#{PriceFilter.filterByPrice}">From: </h:outputLabel>
+         <h:inputText value="#{PriceFilter.priceMin}" rendered="#{PriceFilter.filterByPrice}" onkeypress="if(event.which &lt; 48 || event.which &gt; 57) return false;"/>
+         <h:outputLabel rendered = "#{PriceFilter.filterByPrice}">To: </h:outputLabel>
+         <h:inputText value="#{PriceFilter.priceMax}" rendered="#{PriceFilter.filterByPrice}" onkeypress="if(event.which &lt; 48 || event.which &gt; 57) return false;"/>
+         <br/>
+         Currency: <h:selectBooleanCheckbox value="#{CurrencyFilter.filterByCurrency}"/>
+         <h:inputText value="#{CurrencyFilter.currency}" rendered="#{CurrencyFilter.filterByCurrency}"/>
+         <br/>
+         Pages: <h:selectBooleanCheckbox value="#{PageFilter.filterByPages}"/>
+         <h:outputLabel rendered = "#{PageFilter.filterByPages}">From: </h:outputLabel>
+         <h:inputText value="#{PageFilter.numberOfPagesMin}" rendered="#{PageFilter.filterByPages}" onkeypress="if(event.which &lt; 48 || event.which &gt; 57) return false;"/>
+         <h:outputLabel rendered = "#{PageFilter.filterByPages}">To: </h:outputLabel>
+         <h:inputText value="#{PageFilter.numberOfPagesMax}" rendered="#{PageFilter.filterByPages}" onkeypress="if(event.which &lt; 48 || event.which &gt; 57) return false;"/>
+         <br/>
+
+         Show price:
+         <h:selectOneRadio value = "#{PriceFilter.inPLN}">
+            <f:selectItem itemValue = "#{true}" itemLabel = "in PLN" />
+            <f:selectItem itemValue = "#{false}" itemLabel = "in default currency" />
+         </h:selectOneRadio>
+         <br/>
+
+         <h3>Select visible columns:</h3>
+         Title: <h:selectBooleanCheckbox value="#{TitleFilter.titleVisible}"/><br/>
+         Author: <h:selectBooleanCheckbox value="#{AuthorFilter.authorVisible}"/><br/>
+         Type: <h:selectBooleanCheckbox value="#{TypeFilter.typeVisible}"/><br/>
+         Price: <h:selectBooleanCheckbox value="#{PriceFilter.priceVisible}"/><br/>
+         Currency: <h:selectBooleanCheckbox value="#{CurrencyFilter.currencyVisible}"/><br/>
+         Pages: <h:selectBooleanCheckbox value="#{PageFilter.pagesVisible}"/><br/>
+         <br/>
+         <br/>
+
+      </f:ajax>
+   </h:form>
+
 </h:body>
 </html>
