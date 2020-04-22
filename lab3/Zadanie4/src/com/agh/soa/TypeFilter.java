@@ -3,7 +3,7 @@ package com.agh.soa;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.SessionScoped;
 
-@ManagedBean(name = "TypeFilter")
+@ManagedBean(name = "TypeFilter", eager = true)
 @SessionScoped
 public class TypeFilter extends Filter {
     private String type;
@@ -13,8 +13,12 @@ public class TypeFilter extends Filter {
 
     @Override
     boolean bookMeetsTheConstraints(Book book) {
-        String pattern = ".*" + type + ".*";
-        return book.getType().matches(pattern);
+        if(filterByType) {
+            String pattern = ".*" + type + ".*";
+            return book.getType().matches(pattern);
+        } else {
+            return false;
+        }
     }
 
     // getters and setters

@@ -1,16 +1,21 @@
 package com.agh.soa;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 public abstract class Filter {
     abstract boolean bookMeetsTheConstraints(Book b);
-    List<Book> applyFilter(List<Book> books) {
-        List<Book> filteredBookList = new ArrayList<>();
+    List<Book> applyFilter(ArrayList<Book> books) {
+        List<Book> filteredBookList = new ArrayList<>(books);
         for (Book book : books) {
             if(bookMeetsTheConstraints(book)) {
-                filteredBookList.add(book);
+                ;
+            } else {
+                filteredBookList.remove(book);
+
             }
+
         }
         return filteredBookList;
     }

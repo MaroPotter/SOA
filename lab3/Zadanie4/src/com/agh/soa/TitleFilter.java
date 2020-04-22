@@ -1,7 +1,13 @@
 package com.agh.soa;
 
+import org.w3c.dom.ls.LSOutput;
+
+import javax.ejb.SessionBean;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.SessionScoped;
+import javax.faces.context.ExternalContext;
+import javax.faces.context.FacesContext;
+import java.util.Map;
 
 @ManagedBean(name = "TitleFilter")
 @SessionScoped
@@ -11,10 +17,15 @@ public class TitleFilter extends Filter {
     boolean isTitleVisible = true;
 
 
+
     @Override
     boolean bookMeetsTheConstraints(Book book) {
-        String pattern = ".*" + title + ".*";
-        return book.getTitle().matches(pattern);
+        if(filterByTitle) {
+            String pattern = ".*" + title + ".*";
+            return book.getTitle().matches(pattern);
+        } else {
+            return false;
+        }
     }
 
     // getters and setters

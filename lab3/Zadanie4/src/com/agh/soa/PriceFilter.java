@@ -4,12 +4,12 @@ import CurrencyExchange.Exchanger;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.SessionScoped;
 
-@ManagedBean(name = "PriceFilter")
+@ManagedBean(name = "PriceFilter", eager = true)
 @SessionScoped
 public class PriceFilter extends Filter {
     private double priceMin = 0.0;
     private double priceMax = 250.0;
-    private boolean inPLN = true;
+    static public boolean inPLN = true;
     private Exchanger exchanger= new Exchanger();
     private boolean filterByPrice = false;
     private boolean isPriceVisible = true;
@@ -17,11 +17,15 @@ public class PriceFilter extends Filter {
 
     @Override
     boolean bookMeetsTheConstraints(Book book) {
-        return priceForBook(book)>=priceMin && priceForBook(book)<=priceMax;
+        if(filterByPrice) {
+            return priceForBook(book) >= priceMin && priceForBook(book) <= priceMax;
+        } else {
+            return false;
+        }
     }
-    private double priceForBook(Book book)
+    public double priceForBook(Book book)
     {
-        return this.inPLN ? Math.ceil(exchanger.exchangeToPLN(book.getCurrency(),book.getPrice())) : book.getPrice();
+        return PriceFilter.inPLN ? Math.ceil(exchanger.exchangeToPLN(book.getCurrency(),book.getPrice())) : book.getPrice();
     }
 
     // getters and setters

@@ -2,8 +2,10 @@ package com.agh.soa;
 
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.SessionScoped;
+import java.util.ArrayList;
+import java.util.List;
 
-@ManagedBean(name = "PageFilter")
+@ManagedBean(name = "PageFilter", eager = true)
 @SessionScoped
 public class PageFilter extends Filter {
     private int numberOfPagesMin = 0;
@@ -14,7 +16,11 @@ public class PageFilter extends Filter {
 
     @Override
     boolean bookMeetsTheConstraints(Book book) {
-        return book.getNumberOfPages()>=numberOfPagesMin && book.getNumberOfPages()<=numberOfPagesMax;
+        if(filterByPages) {
+            return book.getNumberOfPages() >= numberOfPagesMin && book.getNumberOfPages() <= numberOfPagesMax;
+        } else {
+            return false;
+        }
     }
 
     // getters and setters
@@ -49,4 +55,6 @@ public class PageFilter extends Filter {
     public void setPagesVisible(boolean pageVisible) {
         isPagesVisible = pageVisible;
     }
+
+
 }

@@ -3,7 +3,7 @@ package com.agh.soa;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.SessionScoped;
 
-@ManagedBean(name = "AuthorFilter")
+@ManagedBean(name = "AuthorFilter", eager = true)
 @SessionScoped
 public class AuthorFilter extends Filter {
     private String author;
@@ -13,8 +13,13 @@ public class AuthorFilter extends Filter {
 
     @Override
     boolean bookMeetsTheConstraints(Book book) {
-        String pattern = ".*" + author + ".*";
-        return book.getAuthor().matches(pattern);
+        if(filterByAuthor) {
+            String pattern = ".*" + author + ".*";
+            return book.getAuthor().matches(pattern);
+        }
+        else {
+            return false;
+        }
     }
 
     // getters and setters

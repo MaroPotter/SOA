@@ -3,7 +3,7 @@ package com.agh.soa;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.SessionScoped;
 
-@ManagedBean(name = "CurrencyFilter")
+@ManagedBean(name = "CurrencyFilter", eager = true)
 @SessionScoped
 public class CurrencyFilter extends Filter {
     private String currency;
@@ -13,10 +13,20 @@ public class CurrencyFilter extends Filter {
 
     @Override
     boolean bookMeetsTheConstraints(Book book) {
-        return book.getCurrency().equals(currency);
+        if(filterByCurrency) {
+            return book.getCurrency().equals(currency);
+        } else {
+            return false;
+        }
+    }
+    public String currencyForBook(Book book)
+    {
+        return PriceFilter.inPLN ? "PLN" : book.getCurrency();
     }
 
+
     // getters and setters
+
     public String getCurrency() {
         return currency;
     }

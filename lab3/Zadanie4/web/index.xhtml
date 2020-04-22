@@ -102,6 +102,43 @@
 
       </f:ajax>
    </h:form>
+      <h:form id="bookTableForm">
+         <h:dataTable value="#{BookStore.getFilteredBookList()}" var="record">
+            <h:column rendered="#{TitleFilter.titleVisible}">
+               <f:facet name="header">Title</f:facet>
+               #{record.title}
+            </h:column>
+            <h:column rendered="#{AuthorFilter.authorVisible}">
+               <f:facet name="header">Author</f:facet>
+               #{record.author}
+            </h:column>
+            <h:column rendered="#{TypeFilter.typeVisible}">
+               <f:facet name="header">Type</f:facet>
+               #{record.type}
+            </h:column>
+            <h:column rendered="#{PriceFilter.priceVisible}">
+               <f:facet name="header">Price</f:facet>
+               #{PriceFilter.priceForBook(record)}
+            </h:column>
+            <h:column rendered="#{CurrencyFilter.currencyVisible}">
+               <f:facet name="header">Currency</f:facet>
+               #{CurrencyFilter.currencyForBook(record)}
+            </h:column>
+            <h:column rendered="#{PageFilter.pagesVisible}">
+               <f:facet name="header">No. of pages</f:facet>
+               #{record.numberOfPages}
+            </h:column>
+<!--            <h:column rendered="#{Filter.isSthVisible()}">-->
+<!--               <f:facet name="header">Book</f:facet>-->
+<!--               <h:selectBooleanCheckbox value="#{record.selected}"/>-->
+<!--            </h:column>-->
+<!--            <h:column>-->
+<!--               #{BookStore.t}-->
+<!--            </h:column>-->
+         </h:dataTable>
+         <br/>
+<!--         <h:commandButton value="Get summary" action="#{Filter.submitOrder()}"/>-->
+      </h:form>
 
 </h:body>
 </html>
