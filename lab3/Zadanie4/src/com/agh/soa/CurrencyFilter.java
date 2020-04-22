@@ -6,18 +6,13 @@ import javax.faces.bean.SessionScoped;
 @ManagedBean(name = "CurrencyFilter", eager = true)
 @SessionScoped
 public class CurrencyFilter extends Filter {
-    private String currency;
-    boolean filterByCurrency = false;
-    boolean isCurrencyVisible = true;
+    private String currency = "PLN";
+    private boolean isCurrencyVisible = true;
 
 
     @Override
     boolean bookMeetsTheConstraints(Book book) {
-        if(filterByCurrency) {
             return book.getCurrency().equals(currency);
-        } else {
-            return false;
-        }
     }
     public String currencyForBook(Book book)
     {
@@ -33,14 +28,6 @@ public class CurrencyFilter extends Filter {
 
     public void setCurrency(String currency) {
         this.currency = currency;
-    }
-
-    public boolean isFilterByCurrency() {
-        return filterByCurrency;
-    }
-
-    public void setFilterByCurrency(boolean filterByCurrency) {
-        this.filterByCurrency = filterByCurrency;
     }
 
     public boolean isCurrencyVisible() {

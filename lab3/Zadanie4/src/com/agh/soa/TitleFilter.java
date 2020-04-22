@@ -12,20 +12,14 @@ import java.util.Map;
 @ManagedBean(name = "TitleFilter")
 @SessionScoped
 public class TitleFilter extends Filter {
-    public String title;
-    boolean filterByTitle = false;
-    boolean isTitleVisible = true;
-
+    private  String title = "";
+    private boolean isTitleVisible = true;
 
 
     @Override
     boolean bookMeetsTheConstraints(Book book) {
-        if(filterByTitle) {
             String pattern = ".*" + title + ".*";
             return book.getTitle().matches(pattern);
-        } else {
-            return false;
-        }
     }
 
     // getters and setters
@@ -37,13 +31,7 @@ public class TitleFilter extends Filter {
         this.title = title;
     }
 
-    public boolean isFilterByTitle() {
-        return filterByTitle;
-    }
 
-    public void setFilterByTitle(boolean filterByTitle) {
-        this.filterByTitle = filterByTitle;
-    }
 
     public boolean isTitleVisible() {
         return isTitleVisible;

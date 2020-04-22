@@ -6,20 +6,14 @@ import javax.faces.bean.SessionScoped;
 @ManagedBean(name = "AuthorFilter", eager = true)
 @SessionScoped
 public class AuthorFilter extends Filter {
-    private String author;
-    boolean filterByAuthor = false;
-    boolean isAuthorVisible = true;
+    private String author = "";
+    private boolean isAuthorVisible = true;
 
 
     @Override
     boolean bookMeetsTheConstraints(Book book) {
-        if(filterByAuthor) {
             String pattern = ".*" + author + ".*";
             return book.getAuthor().matches(pattern);
-        }
-        else {
-            return false;
-        }
     }
 
     // getters and setters
@@ -29,14 +23,6 @@ public class AuthorFilter extends Filter {
 
     public void setAuthor(String author) {
         this.author = author;
-    }
-
-    public boolean isFilterByAuthor() {
-        return filterByAuthor;
-    }
-
-    public void setFilterByAuthor(boolean filterByAuthor) {
-        this.filterByAuthor = filterByAuthor;
     }
 
     public boolean isAuthorVisible() {

@@ -11,16 +11,11 @@ public class PageFilter extends Filter {
     private int numberOfPagesMin = 0;
     private int numberOfPagesMax = 1000;
 
-    boolean filterByPages = false;
-    boolean isPagesVisible = true;
+    private boolean isPagesVisible = true;
 
     @Override
     boolean bookMeetsTheConstraints(Book book) {
-        if(filterByPages) {
             return book.getNumberOfPages() >= numberOfPagesMin && book.getNumberOfPages() <= numberOfPagesMax;
-        } else {
-            return false;
-        }
     }
 
     // getters and setters
@@ -38,14 +33,6 @@ public class PageFilter extends Filter {
 
     public void setNumberOfPagesMax(int numberOfPagesMax) {
         this.numberOfPagesMax = numberOfPagesMax;
-    }
-
-    public boolean isFilterByPages() {
-        return filterByPages;
-    }
-
-    public void setFilterByPage(boolean filterByPages) {
-        this.filterByPages = filterByPages;
     }
 
     public boolean isPagesVisible() {

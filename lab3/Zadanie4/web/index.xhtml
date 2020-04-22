@@ -58,29 +58,29 @@
       <f:ajax render="theForm outputs messages bookTableForm" event="change">
 
          <h3>Filters:</h3>
-         Title: <h:selectBooleanCheckbox value="#{TitleFilter.filterByTitle}"/>
-         <h:inputText value="#{TitleFilter.title}" rendered = "#{TitleFilter.filterByTitle}"/>
+         Title: <h:selectBooleanCheckbox value="#{TitleFilter.isFiltered}"/>
+         <h:inputText value="#{TitleFilter.title}" rendered = "#{TitleFilter.isFiltered}"/>
          <br/>
-         Author: <h:selectBooleanCheckbox value="#{AuthorFilter.filterByAuthor}"/>
-         <h:inputText value="#{AuthorFilter.author}" rendered="#{AuthorFilter.filterByAuthor}"/>
+         Author: <h:selectBooleanCheckbox value="#{AuthorFilter.isFiltered}"/>
+         <h:inputText value="#{AuthorFilter.author}" rendered="#{AuthorFilter.isFiltered}"/>
          <br/>
-         Type: <h:selectBooleanCheckbox value="#{TypeFilter.filterByType}"/>
-         <h:inputText value="#{TypeFilter.type}" rendered="#{TypeFilter.filterByType}"/>
+         Type: <h:selectBooleanCheckbox value="#{TypeFilter.isFiltered}"/>
+         <h:inputText value="#{TypeFilter.type}" rendered="#{TypeFilter.isFiltered}"/>
          <br/>
-         Price: <h:selectBooleanCheckbox value="#{PriceFilter.filterByPrice}"/>
-         <h:outputLabel rendered = "#{PriceFilter.filterByPrice}">From: </h:outputLabel>
-         <h:inputText value="#{PriceFilter.priceMin}" rendered="#{PriceFilter.filterByPrice}" onkeypress="if(event.which &lt; 48 || event.which &gt; 57) return false;"/>
-         <h:outputLabel rendered = "#{PriceFilter.filterByPrice}">To: </h:outputLabel>
-         <h:inputText value="#{PriceFilter.priceMax}" rendered="#{PriceFilter.filterByPrice}" onkeypress="if(event.which &lt; 48 || event.which &gt; 57) return false;"/>
+         Price: <h:selectBooleanCheckbox value="#{PriceFilter.isFiltered}"/>
+         <h:outputLabel rendered = "#{PriceFilter.isFiltered}">From: </h:outputLabel>
+         <h:inputText value="#{PriceFilter.priceMin}" rendered="#{PriceFilter.isFiltered}" onkeypress="if(event.which &lt; 48 || event.which &gt; 57) return false;"/>
+         <h:outputLabel rendered = "#{PriceFilter.isFiltered}">To: </h:outputLabel>
+         <h:inputText value="#{PriceFilter.priceMax}" rendered="#{PriceFilter.isFiltered}" onkeypress="if(event.which &lt; 48 || event.which &gt; 57) return false;"/>
          <br/>
-         Currency: <h:selectBooleanCheckbox value="#{CurrencyFilter.filterByCurrency}"/>
-         <h:inputText value="#{CurrencyFilter.currency}" rendered="#{CurrencyFilter.filterByCurrency}"/>
+         Currency: <h:selectBooleanCheckbox value="#{CurrencyFilter.isFiltered}"/>
+         <h:inputText value="#{CurrencyFilter.currency}" rendered="#{CurrencyFilter.isFiltered}"/>
          <br/>
-         Pages: <h:selectBooleanCheckbox value="#{PageFilter.filterByPages}"/>
-         <h:outputLabel rendered = "#{PageFilter.filterByPages}">From: </h:outputLabel>
-         <h:inputText value="#{PageFilter.numberOfPagesMin}" rendered="#{PageFilter.filterByPages}" onkeypress="if(event.which &lt; 48 || event.which &gt; 57) return false;"/>
-         <h:outputLabel rendered = "#{PageFilter.filterByPages}">To: </h:outputLabel>
-         <h:inputText value="#{PageFilter.numberOfPagesMax}" rendered="#{PageFilter.filterByPages}" onkeypress="if(event.which &lt; 48 || event.which &gt; 57) return false;"/>
+         Pages: <h:selectBooleanCheckbox value="#{PageFilter.isFiltered}"/>
+         <h:outputLabel rendered = "#{PageFilter.isFiltered}">From: </h:outputLabel>
+         <h:inputText value="#{PageFilter.numberOfPagesMin}" rendered="#{PageFilter.isFiltered}" onkeypress="if(event.which &lt; 48 || event.which &gt; 57) return false;"/>
+         <h:outputLabel rendered = "#{PageFilter.isFiltered}">To: </h:outputLabel>
+         <h:inputText value="#{PageFilter.numberOfPagesMax}" rendered="#{PageFilter.isFiltered}" onkeypress="if(event.which &lt; 48 || event.which &gt; 57) return false;"/>
          <br/>
 
          Show price:
@@ -118,7 +118,7 @@
             </h:column>
             <h:column rendered="#{PriceFilter.priceVisible}">
                <f:facet name="header">Price</f:facet>
-               #{PriceFilter.priceForBook(record)}
+               #{record.price}
             </h:column>
             <h:column rendered="#{CurrencyFilter.currencyVisible}">
                <f:facet name="header">Currency</f:facet>

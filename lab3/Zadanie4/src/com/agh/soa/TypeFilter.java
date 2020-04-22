@@ -6,19 +6,14 @@ import javax.faces.bean.SessionScoped;
 @ManagedBean(name = "TypeFilter", eager = true)
 @SessionScoped
 public class TypeFilter extends Filter {
-    private String type;
-    public boolean filterByType = false;
-    boolean isTypeVisible = true;
+    private String type = "";
+    private boolean isTypeVisible = true;
 
 
     @Override
     boolean bookMeetsTheConstraints(Book book) {
-        if(filterByType) {
             String pattern = ".*" + type + ".*";
             return book.getType().matches(pattern);
-        } else {
-            return false;
-        }
     }
 
     // getters and setters
@@ -28,14 +23,6 @@ public class TypeFilter extends Filter {
 
     public void setType(String type) {
         this.type = type;
-    }
-
-    public boolean isFilterByType() {
-        return filterByType;
-    }
-
-    public void setFilterByType(boolean filterByType) {
-        this.filterByType = filterByType;
     }
 
     public boolean isTypeVisible() {

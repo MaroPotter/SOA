@@ -11,17 +11,12 @@ public class PriceFilter extends Filter {
     private double priceMax = 250.0;
     static public boolean inPLN = true;
     private Exchanger exchanger= new Exchanger();
-    private boolean filterByPrice = false;
     private boolean isPriceVisible = true;
 
 
     @Override
     boolean bookMeetsTheConstraints(Book book) {
-        if(filterByPrice) {
             return priceForBook(book) >= priceMin && priceForBook(book) <= priceMax;
-        } else {
-            return false;
-        }
     }
     public double priceForBook(Book book)
     {
@@ -43,14 +38,6 @@ public class PriceFilter extends Filter {
 
     public void setPriceMax(double priceMax) {
         this.priceMax = priceMax;
-    }
-
-    public boolean isFilterByPrice() {
-        return filterByPrice;
-    }
-
-    public void setFilterByPrice(boolean filterByPrice) {
-        this.filterByPrice = filterByPrice;
     }
 
     public boolean isPriceVisible() {
