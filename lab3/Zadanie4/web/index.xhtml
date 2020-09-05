@@ -104,11 +104,11 @@
    </h:form>
       <h:form id="bookTableForm">
          <h:dataTable value="#{BookStore.getFilteredBookList()}" var="record">
-            <h:column rendered="#{TitleFilter.titleVisible}">
+            <h:column rendered="#{TitleFilter.isTitleVisible()}">
                <f:facet name="header">Title</f:facet>
                #{record.title}
             </h:column>
-            <h:column rendered="#{AuthorFilter.authorVisible}">
+            <h:column rendered="#{AuthorFilter.isAuthorVisible()}">
                <f:facet name="header">Author</f:facet>
                #{record.author}
             </h:column>
@@ -128,16 +128,13 @@
                <f:facet name="header">No. of pages</f:facet>
                #{record.numberOfPages}
             </h:column>
-<!--            <h:column rendered="#{Filter.isSthVisible()}">-->
-<!--               <f:facet name="header">Book</f:facet>-->
-<!--               <h:selectBooleanCheckbox value="#{record.selected}"/>-->
-<!--            </h:column>-->
-<!--            <h:column>-->
-<!--               #{BookStore.t}-->
-<!--            </h:column>-->
+            <h:column rendered="#{BookStore.isBookVisible()}">
+               <f:facet name="header">Book</f:facet>
+               <h:selectBooleanCheckbox value="#{record.selected}"/>
+            </h:column>
          </h:dataTable>
          <br/>
-<!--         <h:commandButton value="Get summary" action="#{Filter.submitOrder()}"/>-->
+         <h:commandButton value="Get summary" action="#{BookStore.submitOrder()}"/>
       </h:form>
 
 </h:body>
