@@ -1,0 +1,49 @@
+a {
+    display:block;
+    color: #937a52;
+    font-size: 25px;
+}
+p {
+    display:block;
+    color: #937a52;
+    font-size: 25px;
+}
+
+h1, h2{
+    color: #870a22;
+    font-size: 72px;
+
+}
+h3 {
+    color: #870a22;
+    font-size: 50px;
+}
+
+label {
+    color: #870a22;
+}
+input {
+    width: 150px;
+    height: 30px;
+    background-color: #870a22;
+    border: solid 3px #937a52;
+    border-radius: 10px;
+    display: inline;
+    color: #937a52;
+    font-size: 15px;
+    margin-right: 20px;
+    margin-bottom: 30px;
+}
+input#submitt{
+    width: 150px;
+    height: 60px;
+    font-size: 25px;
+    font-weight: bold;
+    margin-left: 48px;
+}
+
+body {
+    background: #000000;
+    font-family: 'Open Sans', sans-serif;
+}
+

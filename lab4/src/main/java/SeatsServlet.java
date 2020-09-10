@@ -1,16 +1,19 @@
-import pl.labs.Lab4JBL.*;
+import pl.labs.Lab4EJB.ApiBookingManagement;
+import pl.labs.Lab4EJB.ApiSeatManagement;
+import pl.labs.Lab4EJB.User;
+import pl.labs.Lab4EJB.UserManagement;
+import pl.labs.Lab4EJB.Payment;
+import pl.labs.Lab4EJB.Seat;
+
+
 
 import javax.ejb.EJB;
-import javax.persistence.criteria.CriteriaBuilder;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import java.io.File;
-import java.io.FileInputStream;
 import java.io.IOException;
-import java.io.PrintWriter;
 
 @WebServlet(name = "SeatsServlet")
 public class SeatsServlet extends HttpServlet {
@@ -31,10 +34,11 @@ public class SeatsServlet extends HttpServlet {
         int column = Integer.parseInt(request.getParameter("column"));
         User user = userManagement.getActUser();
         Payment payment = seatManagement.buyTicket(userManagement.getActUser(),row,column);
+        request.setAttribute("payment", payment);
         request.setAttribute("username",user.name);
         request.setAttribute("row",row);
         request.setAttribute("column",column);
-        request.getRequestDispatcher("/WEB-INF/buy.jsp").forward(request,response);
+        request.getRequestDispatcher("buy.jsp").forward(request,response);
     }
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {

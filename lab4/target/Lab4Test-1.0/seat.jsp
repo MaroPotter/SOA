@@ -1,25 +1,22 @@
-<%@ page import="pl.labs.Lab4JBL.Seat" %><%--
-  Created by IntelliJ IDEA.
-  User: mateusz
-  Date: 17.08.2020
-  Time: 16:32
-  To change this template use File | Settings | File Templates.
---%>
+<%@ page import="pl.labs.Lab4EJB.Seat" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
-<%
-    Seat seat = (Seat) request.getAttribute("seat");
-    String description = "";
-    if(seat.booked)
-        description = "not ";
 
-%>
 <html>
 <head>
-    <title>Seat + ${row} + ${column}</title>
+    <title>Seat ${row}-${column}</title>
     <meta charset="UTF-8"/>
+    <link rel="stylesheet" href="resources/style.css">
+
 </head>
 <body>
-    <h2>Seat + ${row} + ${column}</h2>
+    <%
+        Seat seat = (Seat) request.getAttribute("seat");
+        String description = "";
+        if(seat.booked)
+            description = "not ";
+
+    %>
+    <h3>Seat ${row}-${column}</h3>
     <p> This seat is <%out.print(description);%> available for booking </br>
         Price: <i>${seatPrice}</i>
     </p>

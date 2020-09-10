@@ -1,5 +1,5 @@
-import pl.labs.Lab4JBL.ApiCounter;
-import pl.labs.Lab4JBL.ApiMultiply;
+import pl.labs.Lab4EJB.ApiCounter;
+import pl.labs.Lab4EJB.ApiMultiply;
 
 import javax.ejb.EJB;
 import javax.servlet.ServletException;
