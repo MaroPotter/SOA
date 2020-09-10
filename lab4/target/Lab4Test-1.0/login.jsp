@@ -12,6 +12,6 @@
         </br>
         <input type="submit" value="Sign in" id="submitt">
     </form>
-    <a href="index.html">Back</a>
+    <a href="index.html" id="back">Back</a>
 </body>
 </html>

@@ -14,8 +14,8 @@
 <body>
     <h2>Information about logged-in user</h2>
     <p>Your username: ${username}</p>
-    <p> You have: ${account} zł</p>
-    <a href="index.html">Back</a>
+    <p>The status of your account: ${account} zł</p>
+    <a href="index.html" id="back">Back</a>
 
 </body>
 </html>

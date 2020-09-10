@@ -2,6 +2,12 @@ a {
     display:block;
     color: #937a52;
     font-size: 25px;
+    margin-bottom: 25px;
+}
+a#back {
+    font-size: 30px;
+    margin-top: 20px;
+    color: #870a22;
 }
 p {
     display:block;
@@ -12,7 +18,6 @@ p {
 h1, h2{
     color: #870a22;
     font-size: 72px;
-
 }
 h3 {
     color: #870a22;
@@ -32,9 +37,9 @@ input {
     color: #937a52;
     font-size: 15px;
     margin-right: 20px;
-    margin-bottom: 30px;
 }
 input#submitt{
+    margin-top: 30px;
     width: 150px;
     height: 60px;
     font-size: 25px;

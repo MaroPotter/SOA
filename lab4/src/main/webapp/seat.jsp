@@ -29,6 +29,6 @@
               "<input type='submit' value='Book' />" + "</form>");
         }
     %>
-<a href="seats.jsp">Back</a>
+<a href="seats.jsp" id="back">Back</a>
 </body>
 </html>

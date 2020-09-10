@@ -21,7 +21,7 @@
             }
         %>
     </table>
-    <a href="index.html">Back</a>
+    <a href="index.html" id="back">Back</a>
     <script>
 
 </script>
