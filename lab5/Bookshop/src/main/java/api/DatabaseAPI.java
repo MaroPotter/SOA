@@ -1,6 +1,7 @@
 package api;
 
 import database.BookEntity;
+
 import java.util.List;
 
 public interface DatabaseAPI {

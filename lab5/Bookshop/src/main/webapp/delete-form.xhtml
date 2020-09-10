@@ -7,7 +7,7 @@
       xmlns:f="http://xmlns.jcp.org/jsf/core">
 <h:head>
     <title>Deleting a book</title>
-    <h:outputStylesheet name="css/style.css"/>
+    <h:outputStylesheet name="main.css"/>
 </h:head>
 
 <body>
@@ -25,9 +25,9 @@
 <h:form>
     <h:panelGrid columns="2" styleClass = "buttons-group">
         <h:commandButton value="Back" action="#{BookBean.onBackButton}"
-                         immediate="true" styleClass = "back-button"/>
-        <h:commandButton value="Remove book" action="#{BookBean.deleteBook}"
-                         styleClass = "remove-button"/>
+                         immediate="true" styleClass = "button"/>
+        <h:commandButton value="DELETE BOOK" action="#{BookBean.deleteBook}"
+                         styleClass = "button"/>
     </h:panelGrid>
 </h:form>
 

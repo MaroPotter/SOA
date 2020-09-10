@@ -35,7 +35,6 @@
             <redirect></redirect>
         </navigation-case>
     </navigation-rule>
-
     <navigation-rule>
         <from-view-id>/delete-form.xhtml</from-view-id>
         <navigation-case>

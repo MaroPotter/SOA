@@ -1,91 +1,29 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="ArtifactsWorkspaceSettings">
+    <artifacts-to-build>
+      <artifact name="Bookshop:war" />
+    </artifacts-to-build>
+  </component>
   <component name="ChangeListManager">
     <list default="true" id="1e4cf2df-177e-4ba0-9e4a-c1b41da79c02" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/../../lab4/.idea/encodings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../lab4/src/main/webapp/userinfo.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../lab4/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../lab4/.idea/compiler.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../lab4/.idea/lab4.iml" beforeDir="false" afterPath="$PROJECT_DIR$/../../lab4/.idea/lab4.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../lab4/Lab4JBL.iml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../lab4/Lab4Test.iml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../lab4/lab4.iml" beforeDir="false" afterPath="$PROJECT_DIR$/../../lab6/.idea/lab6.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../lab4/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../lab4/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../lab4/src/main/java/MultiplyServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../lab4/src/main/java/MultiplyServlet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../lab4/src/main/java/SeatsServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../lab4/src/main/java/SeatsServlet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../lab4/src/main/java/UserServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../lab4/src/main/java/UserServlet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../lab4/src/main/java/pl.labs.Lab4JBL/ApiBookingManagement.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../lab4/src/main/java/pl/labs/Lab4EJB/ApiBookingManagement.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../lab4/src/main/java/pl.labs.Lab4JBL/ApiCounter.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../lab4/src/main/java/pl/labs/Lab4EJB/ApiCounter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../lab4/src/main/java/pl.labs.Lab4JBL/ApiMultiply.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../lab4/src/main/java/pl/labs/Lab4EJB/ApiMultiply.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../lab4/src/main/java/pl.labs.Lab4JBL/ApiPaymentManagement.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../lab4/src/main/java/pl/labs/Lab4EJB/ApiPaymentManagement.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../lab4/src/main/java/pl.labs.Lab4JBL/ApiSeatManagement.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../lab4/src/main/java/pl/labs/Lab4EJB/ApiSeatManagement.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../lab4/src/main/java/pl.labs.Lab4JBL/IApiCounter.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../lab4/src/main/java/pl/labs/Lab4EJB/IApiCounter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../lab4/src/main/java/pl.labs.Lab4JBL/IApiCounterLocal.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../lab4/src/main/java/pl/labs/Lab4EJB/IApiCounterLocal.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../lab4/src/main/java/pl.labs.Lab4JBL/IApiCounterRemote.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../lab4/src/main/java/pl/labs/Lab4EJB/IApiCounterRemote.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../lab4/src/main/java/pl.labs.Lab4JBL/IApiMultiply.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../lab4/src/main/java/pl/labs/Lab4EJB/IApiMultiply.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../lab4/src/main/java/pl.labs.Lab4JBL/IApiMultiplyLocal.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../lab4/src/main/java/pl/labs/Lab4EJB/IApiMultiplyLocal.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../lab4/src/main/java/pl.labs.Lab4JBL/IApiMultiplyRemote.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../lab4/src/main/java/pl/labs/Lab4EJB/IApiMultiplyRemote.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../lab4/src/main/java/pl.labs.Lab4JBL/IApiSeatManagment.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../lab4/src/main/java/pl/labs/Lab4EJB/IApiSeatManagment.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../lab4/src/main/java/pl.labs.Lab4JBL/IApiSeatMangmentLocal.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../lab4/src/main/java/pl/labs/Lab4EJB/IApiSeatMangmentLocal.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../lab4/src/main/java/pl.labs.Lab4JBL/Payment.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../lab4/src/main/java/pl/labs/Lab4EJB/Payment.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../lab4/src/main/java/pl.labs.Lab4JBL/Seat.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../lab4/src/main/java/pl/labs/Lab4EJB/Seat.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../lab4/src/main/java/pl.labs.Lab4JBL/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../lab4/src/main/java/pl/labs/Lab4EJB/User.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../lab4/src/main/java/pl.labs.Lab4JBL/UserManagement.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../lab4/src/main/java/pl/labs/Lab4EJB/UserManagement.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../lab4/src/main/resources/META-INF/persistence.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../lab4/src/main/resources/META-INF/persistence.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../lab4/src/main/webapp/WEB-INF/web.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../lab4/src/main/webapp/WEB-INF/web.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../lab4/src/main/webapp/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/../../lab4/src/main/webapp/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../lab4/src/main/webapp/login.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/../../lab4/src/main/webapp/login.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../lab4/src/main/webapp/seat.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/../../lab4/src/main/webapp/seat.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../lab4/src/main/webapp/seats.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/../../lab4/src/main/webapp/seats.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../lab4/target/Lab4Test-1.0.war" beforeDir="false" afterPath="$PROJECT_DIR$/../../lab4/target/Lab4Test-1.0.war" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../lab4/target/Lab4Test-1.0/WEB-INF/classes/META-INF/persistence.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../lab4/target/Lab4Test-1.0/WEB-INF/classes/META-INF/persistence.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../lab4/target/Lab4Test-1.0/WEB-INF/classes/MultiplyServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../lab4/target/Lab4Test-1.0/WEB-INF/classes/MultiplyServlet.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../lab4/target/Lab4Test-1.0/WEB-INF/classes/SeatsServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../lab4/target/Lab4Test-1.0/WEB-INF/classes/SeatsServlet.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../lab4/target/Lab4Test-1.0/WEB-INF/classes/UserServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../lab4/target/Lab4Test-1.0/WEB-INF/classes/UserServlet.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../lab4/target/Lab4Test-1.0/WEB-INF/classes/pl/labs/Lab4JBL/ApiBookingManagement.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../lab4/target/Lab4Test-1.0/WEB-INF/classes/pl/labs/Lab4JBL/ApiCounter.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../lab4/target/Lab4Test-1.0/WEB-INF/classes/pl/labs/Lab4JBL/ApiMultiply.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../lab4/target/Lab4Test-1.0/WEB-INF/classes/pl/labs/Lab4JBL/ApiPaymentManagement.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../lab4/target/Lab4Test-1.0/WEB-INF/classes/pl/labs/Lab4JBL/ApiSeatManagement.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../lab4/target/Lab4Test-1.0/WEB-INF/classes/pl/labs/Lab4JBL/IApiCounter.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../lab4/target/Lab4Test-1.0/WEB-INF/classes/pl/labs/Lab4JBL/IApiCounterLocal.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../lab4/target/Lab4Test-1.0/WEB-INF/classes/pl/labs/Lab4JBL/IApiCounterRemote.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../lab4/target/Lab4Test-1.0/WEB-INF/classes/pl/labs/Lab4JBL/IApiMultiply.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../lab4/target/Lab4Test-1.0/WEB-INF/classes/pl/labs/Lab4JBL/IApiMultiplyLocal.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../lab4/target/Lab4Test-1.0/WEB-INF/classes/pl/labs/Lab4JBL/IApiMultiplyRemote.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../lab4/target/Lab4Test-1.0/WEB-INF/classes/pl/labs/Lab4JBL/IApiSeatManagment.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../lab4/target/Lab4Test-1.0/WEB-INF/classes/pl/labs/Lab4JBL/IApiSeatMangmentLocal.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../lab4/target/Lab4Test-1.0/WEB-INF/classes/pl/labs/Lab4JBL/Payment.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../lab4/target/Lab4Test-1.0/WEB-INF/classes/pl/labs/Lab4JBL/Seat.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../lab4/target/Lab4Test-1.0/WEB-INF/classes/pl/labs/Lab4JBL/User.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../lab4/target/Lab4Test-1.0/WEB-INF/classes/pl/labs/Lab4JBL/UserManagement.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../lab4/target/Lab4Test-1.0/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/../../lab4/target/Lab4Test-1.0/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../lab4/target/Lab4Test-1.0/seat.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/../../lab4/target/Lab4Test-1.0/seat.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../lab4/target/Lab4Test-1.0/seats.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/../../lab4/target/Lab4Test-1.0/seats.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../lab4/target/classes/META-INF/persistence.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../lab4/target/classes/META-INF/persistence.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../lab4/target/classes/MultiplyServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../lab4/target/classes/MultiplyServlet.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../lab4/target/classes/SeatsServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../lab4/target/classes/SeatsServlet.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../lab4/target/classes/UserServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../lab4/target/classes/UserServlet.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../lab4/target/classes/pl/labs/Lab4JBL/ApiBookingManagement.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../lab4/target/classes/pl/labs/Lab4JBL/ApiCounter.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../lab4/target/classes/pl/labs/Lab4JBL/ApiMultiply.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../lab4/target/classes/pl/labs/Lab4JBL/ApiPaymentManagement.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../lab4/target/classes/pl/labs/Lab4JBL/ApiSeatManagement.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../lab4/target/classes/pl/labs/Lab4JBL/IApiCounter.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../lab4/target/classes/pl/labs/Lab4JBL/IApiCounterLocal.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../lab4/target/classes/pl/labs/Lab4JBL/IApiCounterRemote.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../lab4/target/classes/pl/labs/Lab4JBL/IApiMultiply.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../lab4/target/classes/pl/labs/Lab4JBL/IApiMultiplyLocal.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../lab4/target/classes/pl/labs/Lab4JBL/IApiMultiplyRemote.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../lab4/target/classes/pl/labs/Lab4JBL/IApiSeatManagment.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../lab4/target/classes/pl/labs/Lab4JBL/IApiSeatMangmentLocal.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../lab4/target/classes/pl/labs/Lab4JBL/Payment.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../lab4/target/classes/pl/labs/Lab4JBL/Seat.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../lab4/target/classes/pl/labs/Lab4JBL/User.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../lab4/target/classes/pl/labs/Lab4JBL/UserManagement.class" beforeDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Bookshop.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/resources/main.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../lab4/src/main/webapp/userinfo.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/../../lab4/src/main/webapp/userinfo.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/BookBean.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/BookBean.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/api/DatabaseAPI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/api/DatabaseAPI.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/database/BookEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/database/BookEntity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/database/Database.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/database/Database.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/faces-config.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/faces-config.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/add-form.xhtml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/add-form.xhtml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/delete-form.xhtml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/delete-form.xhtml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/index.xhtml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/index.xhtml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/resources/css/style.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/update-form.xhtml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/update-form.xhtml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../lab6/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../lab6/.idea/compiler.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../lab6/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../lab6/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../lab6/src/main/webapp/resources/css/style.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../lab6/.idea/lab6.iml" beforeDir="false" afterPath="$PROJECT_DIR$/../../lab6/.idea/lab6.iml" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -109,6 +47,14 @@
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
   </component>
+  <component name="RecentsManager">
+    <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
+      <recent name="" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\SOA\lab5\Bookshop\src\main\webapp\resources" />
+    </key>
+  </component>
   <component name="RunDashboard">
     <option name="ruleStates">
       <list>
@@ -120,6 +66,80 @@
         </RuleState>
       </list>
     </option>
+  </component>
+  <component name="RunManager">
+    <configuration name="JBoss 18.0.1.Final" type="JBossConfiguration" factoryName="Local" APPLICATION_SERVER_NAME="JBoss 18.0.1.Final" ALTERNATIVE_JRE_ENABLED="false" nameIsGenerated="true">
+      <option name="SHOW_DIALOG_ON_UPDATE" value="false" />
+      <option name="UPDATING_POLICY" value="redeploy-artifacts" />
+      <deployment>
+        <artifact name="Bookshop:war">
+          <settings />
+        </artifact>
+      </deployment>
+      <server-settings>
+        <option name="SERVER" />
+        <option name="BINDING_SET_NAME" value="" />
+        <option name="DOMAIN" value="false" />
+        <option name="SERVER_GROUP" value="main-server-group" />
+        <option name="USERNAME" value="maropotter" />
+        <option name="CREDENTIAL_ALIAS" value="8d4bae93-5ac5-4b6e-b94a-7dd45993d50e" />
+      </server-settings>
+      <predefined_log_file enabled="true" id="JBoss" />
+      <RunnerSettings RunnerId="Debug">
+        <option name="DEBUG_PORT" value="55942" />
+      </RunnerSettings>
+      <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Cover">
+        <option name="USE_ENV_VARIABLES" value="true" />
+        <STARTUP>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </STARTUP>
+        <SHUTDOWN>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </SHUTDOWN>
+      </ConfigurationWrapper>
+      <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Debug">
+        <option name="USE_ENV_VARIABLES" value="true" />
+        <STARTUP>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </STARTUP>
+        <SHUTDOWN>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </SHUTDOWN>
+      </ConfigurationWrapper>
+      <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Run">
+        <option name="USE_ENV_VARIABLES" value="true" />
+        <STARTUP>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </STARTUP>
+        <SHUTDOWN>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </SHUTDOWN>
+      </ConfigurationWrapper>
+      <method v="2">
+        <option name="Make" enabled="true" />
+        <option name="BuildArtifacts" enabled="true">
+          <artifact name="Bookshop:war" />
+        </option>
+      </method>
+    </configuration>
   </component>
   <component name="SvnConfiguration">
     <configuration />
@@ -133,6 +153,7 @@
       <updated>1599688610496</updated>
       <workItem from="1599688613184" duration="1846000" />
       <workItem from="1599733979995" duration="2330000" />
+      <workItem from="1599739497689" duration="16439000" />
     </task>
     <servers />
   </component>
