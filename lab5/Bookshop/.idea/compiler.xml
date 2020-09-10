@@ -9,13 +9,5 @@
         <module name="Bookshop" />
       </profile>
     </annotationProcessing>
-    <bytecodeTargetLevel>
-      <module name="Bookshop" target="1.8" />
-    </bytecodeTargetLevel>
-  </component>
-  <component name="JavacSettings">
-    <option name="ADDITIONAL_OPTIONS_OVERRIDE">
-      <module name="Bookshop" options="-arg -Xlint:all,-options,-path" />
-    </option>
   </component>
 </project>
