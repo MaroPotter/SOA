@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+<h:head>
+    <title>Adding a book</title>
+    <h:outputStylesheet name="main.css"/>
+</h:head>
+
+<h:body>
+
+    <h:button value="Back" outcome="/books/books" styleClass="back-button"/>
+
+    <h:form id = "book-add-form">
+        <h:outputLabel for="book-title-field">Book Title:</h:outputLabel>
+        <h:inputText id="book-title-field" value="#{BookBean.title}"
+                     required="true" requiredMessage="The title of book is required"/>
+        <h:message for="book-title-field" rendered="true"/>
+
+        <h:outputLabel for="book-isbn-field">Book ISBN Number:</h:outputLabel>
+        <h:inputText type="number" id="book-isbn-field" value="#{BookBean.ISBNNumber}"
+                     required="true" requiredMessage="Required" autocomplete="off"/>
+        <h:message for="book-isbn-field" styleClass="error" rendered="true"/>
+
+        <h:outputLabel for="author-name-field">Author Name:</h:outputLabel>
+        <h:inputText id="author-name-field" value="#{BookBean.authorName}"
+                     required="true" requiredMessage="Required" autocomplete="off"/>
+        <h:message for="author-name-field" styleClass="error" rendered="true"/>
+
+        <h:outputLabel for="author-surname-field" >Author Surname:</h:outputLabel>
+        <h:inputText id="author-surname-field" value="#{BookBean.authorSurname}"
+                     required="true" requiredMessage="Required" autocomplete="off"/>
+        <h:message for="author-surname-field" styleClass="error" rendered="true"/>
+
+        <h:outputLabel for="book-genre-field" >Book genre:</h:outputLabel>
+        <h:inputText id="book-genre-field" value="#{BookBean.genre}"
+                     required="true" requiredMessage="Required" autocomplete="off"/>
+        <h:message for="book-genre-field" styleClass="error" rendered="true"/>
+
+        <h:outputLabel for="book-quantity-field" >Book quantity:</h:outputLabel>
+        <h:inputText id="book-quantity-field" value="#{BookBean.quantity}"
+                     required="true" requiredMessage="Required" autocomplete="off"/>
+        <h:message for="book-quantity-field" styleClass="error" rendered="true"/>
+
+        <h:commandButton value="Add book" action="#{BookBean.addBook}"
+                         styleClass = "small-button"/>
+    </h:form>
+</h:body>
+
+</html>

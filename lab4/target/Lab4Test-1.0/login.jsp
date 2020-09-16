@@ -7,8 +7,8 @@
 <body>
     <h1>Logging in</h1>
     <form action="login" method="POST">
-        <label>Login: </label><input type="text" name="login"/>
-        <label>Password: </label><input type="password" name="password"/>
+        <label>Login: </label><input type="text" name="login" autocomplete="off"/>
+        <label>Password: </label><input type="password" name="password" autocomplete="off"/>
         </br>
         <input type="submit" value="Sign in" id="submitt">
     </form>

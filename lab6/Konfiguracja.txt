@@ -1,0 +1,14 @@
+Aby uruchomić ten projekt, trzeba:
+1) Usunąć linijkę z pliku konfiguracyjnego serwera wildfly – standalone.xml – 
+między domknięciem znacznika concurrent i domknięciem znacznika subsystem:
+
+            <default-bindings context-DB="java:jboss/ee/concurrency/context/default"
+		 datasource="java:jboss/datasources/ExampleDS" managed-executor-DB="java:jboss/ee/concurrency/executor/default"
+		 managed-scheduled-executor-DB="java:jboss/ee/concurrency/scheduler/default"
+		 managed-thread-factory="java:jboss/ee/concurrency/factory/default"/>
+
+2) Oczywiście dane z pliku persistence.xml muszą się zgadzać (dostęp do bazy) 
+3) Trzeba utworzyć schemat o nazwie "library" w bazie
+	
+	CREATE SCHEMA library;
+

@@ -1,5 +1,5 @@
-import api.DatabaseAPI;
-import database.BookEntity;
+import api.DB_API;
+import db.Book;
 
 import javax.ejb.EJB;
 import javax.faces.bean.ManagedBean;
@@ -10,14 +10,13 @@ import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
 
-
 @ManagedBean(name = "BookBean")
 @SessionScoped
 public class BookBean
 {
     @EJB
-    DatabaseAPI dataBase;
-
+    DB_API dataBase;
+    
     String authorSurname;
     String authorName;
     String bookTitle;
@@ -25,11 +24,10 @@ public class BookBean
     Integer releaseDate;
     BigDecimal price;
     Integer selectedBookId;
-
-
+    
     public String addBook()
     {
-        BookEntity bookEntity = new BookEntity(this.authorName,this.authorSurname,this.bookTitle,
+        Book bookEntity = new Book(this.authorName,this.authorSurname,this.bookTitle,
                 this.isbnNumber,this.releaseDate,this.price);
         dataBase.addBook(bookEntity);
         this.setEmptyValues();
@@ -46,9 +44,9 @@ public class BookBean
         return "BOOK_DELETED";
     }
 
-    public String updateBook()
+    public String editBook()
     {
-        BookEntity bookEntity = new BookEntity(this.getAuthorName(), this.getAuthorSurname(), this.getBookTitle(),
+        Book bookEntity = new Book(this.getAuthorName(), this.getAuthorSurname(), this.getBookTitle(),
                 this.getIsbnNumber(), this.getReleaseDate(), this.getPrice());
         dataBase.updateBook(this.getSelectedBookId(), bookEntity);
         this.setEmptyValues();
@@ -56,7 +54,7 @@ public class BookBean
         return "BOOK_UPDATED";
     }
 
-    public List<BookEntity> getAllBooks()
+    public List<Book> getAllBooks()
     {
         return dataBase.getAllBooks();
     }
@@ -65,22 +63,22 @@ public class BookBean
         Map<String, Integer> booksMap = new LinkedHashMap<>();
 
         String label = "";
-        List <BookEntity> books = dataBase.getAllBooks();
-        for (BookEntity be : books) {
-            label = be.getAuthorName() + " " + be.getAuthorSurname() + ": " + be.getBookTitle();
-            booksMap.put(label, be.getId());
+        List <Book> books = dataBase.getAllBooks();
+        for (Book b : books) {
+            label = b.getAuthorName() + " " + b.getAuthorSurname() + ": " + b.getBookTitle();
+            booksMap.put(label, b.getId());
         }
 
         return booksMap;
     }
 
     public void onBookSelection (AjaxBehaviorEvent ajaxBehaviorEvent) {
-        List<BookEntity> books = dataBase.getAllBooks();
+        List<Book> books = dataBase.getAllBooks();
 
         if ( this.getSelectedBookId() == null ) {
             this.setEmptyValues();
         } else {
-            for (BookEntity book : books) {
+            for (Book book : books) {
                 if ( book.getId() == this.getSelectedBookId()) {
                     this.authorName = book.getAuthorName();
                     this.authorSurname = book.getAuthorSurname();
@@ -107,8 +105,6 @@ public class BookBean
         this.price = null;
         this.setSelectedBookId(null);
     }
-
-    // Getters and Setters
 
     public String getAuthorSurname() {
         return authorSurname;

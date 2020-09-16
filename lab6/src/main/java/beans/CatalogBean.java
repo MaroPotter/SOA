@@ -1,8 +1,8 @@
 package beans;
 
-import model.Book;
-import model.Catalog;
-import repository.CatalogRepository;
+import entities.Book;
+import entities.Catalog;
+import DB.CatalogDB;
 
 import javax.ejb.EJB;
 import javax.faces.bean.ManagedBean;
@@ -16,14 +16,12 @@ import java.util.List;
 @SessionScoped
 public class CatalogBean {
     @EJB
-    CatalogRepository catalogRepository;
+    CatalogDB catalogDB;
 
     @PersistenceContext(name = "book-persistence-unit")
     private EntityManager em;
 
     private int id;
-    private int quantity;
-    private int available;
     private Book book;
 
     private Catalog EditedCatalog;
@@ -33,7 +31,7 @@ public class CatalogBean {
     private String lastQueryResult;
 
     public List<Catalog> getCatalog() {
-        return catalogRepository.getCatalog();
+        return catalogDB.getCatalog();
     }
 
     public void setEditMode(Catalog catalog) {
@@ -51,7 +49,7 @@ public class CatalogBean {
         int newAvailable = originalAvailable + quantityDiff;
         editedCatalog.setAvailable(newAvailable);
 
-        catalogRepository.updateCatalog(editedCatalog.getId(), newQuantity, newAvailable);
+        catalogDB.updateCatalog(editedCatalog.getId(), newQuantity, newAvailable);
         this.setEditMode(false);
     }
 
@@ -62,7 +60,7 @@ public class CatalogBean {
 
     public void getReadersByAuthorAndDate(String authorId, Date dateFrom, Date dateTo) {
         try {
-            List<Object> readers = catalogRepository.getReadersByAuthorIdAndDate(authorId, dateFrom, dateTo);
+            List<Object> readers = catalogDB.getReadersByAuthorIdAndDate(authorId, dateFrom, dateTo);
 
             String resultStr = this.objList2String(readers);
             setLastQueryResult(resultStr);
@@ -74,7 +72,7 @@ public class CatalogBean {
 
     public void getReadersByBookAndDate(String bookId, Date dateFrom, Date dateTo) {
         try {
-            List<Object> readers = catalogRepository.getReadersByBookAndDate(bookId, dateFrom, dateTo);
+            List<Object> readers = catalogDB.getReadersByBookAndDate(bookId, dateFrom, dateTo);
 
             String resultStr = this.objList2String(readers);
             setLastQueryResult(resultStr);
@@ -86,7 +84,7 @@ public class CatalogBean {
 
     public void getBooksByReaderIdAndDate(String readerId, Date dateFrom, Date dateTo) {
         try {
-            List<Object> books = catalogRepository.getBooksByReaderIdAndDate(readerId, dateFrom, dateTo);
+            List<Object> books = catalogDB.getBooksByReaderIdAndDate(readerId, dateFrom, dateTo);
 
             String resultStr = this.objList2String(books);
             setLastQueryResult(resultStr);
@@ -98,7 +96,7 @@ public class CatalogBean {
 
     public void getMostReadAuthor() {
         try {
-            List<Object> authors = catalogRepository.getMostReadAuthor();
+            List<Object> authors = catalogDB.getMostReadAuthor();
 
             String resultStr = this.objList2String(authors);
             setLastQueryResult(resultStr);
@@ -114,22 +112,6 @@ public class CatalogBean {
 
     public void setId(int id) {
         this.id = id;
-    }
-
-    public int getQuantity() {
-        return quantity;
-    }
-
-    public void setQuantity(int quantity) {
-        this.quantity = quantity;
-    }
-
-    public int getAvailable() {
-        return available;
-    }
-
-    public void setAvailable(int available) {
-        this.available = available;
     }
 
     public Book getBook() {
@@ -169,7 +151,7 @@ public class CatalogBean {
 
         String resultStr = "";
         if ( objectList.size() == 0 ) {
-            resultStr = "No results found matching your search criteria";
+            resultStr = "None of the items meet requested criteria";
         } else {
             for (Object o : objectList) {
                 resultStr += o.toString();

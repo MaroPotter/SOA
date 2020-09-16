@@ -1,13 +1,12 @@
 package beans;
 
-import repository.AuthorRepository;
-import model.Author;
+import DB.AuthorDB;
+import entities.Author;
 
 import javax.ejb.EJB;
 import javax.faces.application.FacesMessage;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.SessionScoped;
-import javax.faces.context.FacesContext;
 import javax.faces.event.AjaxBehaviorEvent;
 import java.util.LinkedHashMap;
 import java.util.List;
@@ -17,28 +16,26 @@ import java.util.Map;
 @SessionScoped
 public class AuthorBean {
     @EJB
-    AuthorRepository authorRepository;
+    AuthorDB authorDB;
 
-    String name;
-    String surname;
+    private String name;
+    private String surname;
 
-    Integer selectedAuthorId;
+    private Integer selectedAuthorId;
 
     public List<Author> getAllAuthors() {
-        return authorRepository.getAllAuthors();
+        return authorDB.getAllAuthors();
     }
 
     public String addAuthor() {
-        List<Author> authors = authorRepository.findByNameAndSurname(this.name, this.surname);
+        List<Author> authors = authorDB.searchByNameAndSurname(this.name, this.surname);
 
         if ( !authors.isEmpty() ) {
-            FacesContext context = FacesContext.getCurrentInstance();
             FacesMessage fm = new FacesMessage( "Author already exists");
-            context.addMessage( "author-add-form:author-name-field", fm);
 
             return null;
         } else {
-            authorRepository.addAuthor(this.name, this.surname);
+            authorDB.addAuthor(this.name, this.surname);
             this.setEmptyValues();
 
             return "/authors/authors";
@@ -46,17 +43,15 @@ public class AuthorBean {
     }
 
     public String updateAuthor() {
-        List<Author> authors = authorRepository.findByNameAndSurname(this.name, this.surname);
+        List<Author> authors = authorDB.searchByNameAndSurname(this.name, this.surname);
 
         if ( !authors.isEmpty() ) {
-            FacesContext context = FacesContext.getCurrentInstance();
             FacesMessage fm = new FacesMessage( "Author already exists");
-            context.addMessage( "author-update-form:author-name-field", fm);
 
             return null;
         } else {
             Author author = new Author(this.name, this.surname);
-            authorRepository.updateAuthor(this.selectedAuthorId, author);
+            authorDB.updateAuthor(this.selectedAuthorId, author);
             this.setEmptyValues();
             return "/authors/authors";
         }
@@ -64,14 +59,12 @@ public class AuthorBean {
 
     public String deleteAuthor() {
         try {
-            authorRepository.deleteAuthor(this.selectedAuthorId);
+            authorDB.deleteAuthor(this.selectedAuthorId);
             this.setEmptyValues();
 
             return "/authors/authors";
         } catch (Exception e) {
-            FacesContext context = FacesContext.getCurrentInstance();
             FacesMessage fm = new FacesMessage( "Can not remove selected author");
-            context.addMessage( "author-delete-form:authors-listbox", fm);
         }
 
         return null;
@@ -81,7 +74,7 @@ public class AuthorBean {
         Map<String, Integer> authorsMap = new LinkedHashMap<>();
 
         String label = "";
-        List <Author> authors = authorRepository.getAllAuthors();
+        List <Author> authors = authorDB.getAllAuthors();
         for (Author author : authors) {
             label = author.getName() + " " + author.getSurname();
             authorsMap.put(label, author.getId());
@@ -91,7 +84,7 @@ public class AuthorBean {
     }
 
     public void onAuthorSelection (AjaxBehaviorEvent ajaxBehaviorEvent) {
-        List<Author> authors = authorRepository.getAllAuthors();
+        List<Author> authors = authorDB.getAllAuthors();
 
         if ( this.selectedAuthorId != null ) {
             for (Author author : authors) {
@@ -105,11 +98,6 @@ public class AuthorBean {
         }
     }
 
-    public String onBackButton () {
-        this.setEmptyValues();
-
-        return "/authors/authors";
-    }
 
     public void setEmptyValues () {
         this.name = null;

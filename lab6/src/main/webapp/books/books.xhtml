@@ -7,19 +7,14 @@
       xmlns:f="http://xmlns.jcp.org/jsf/core">
 <h:head>
     <title>Books</title>
-    <h:outputStylesheet name="css/style.css"/>
+    <h:outputStylesheet name="main.css"/>
 </h:head>
 
 <h:body>
-    <h:form id ="menu" class="buttons-menu-panel">
-        <h:button value="Back to previous menu" outcome = "/index" styleClass = "menu-button back-button"/>
-        <br/>
-        <h:button value="Add book" outcome = "/books/add-form" styleClass = "menu-button add-button"/>
-        <br/>
-        <h:button value="Remove book" outcome = "/books/delete-form" styleClass = "menu-button remove-button"/>
-    </h:form>
 
-    <h:form id="books-table" class="table-container">
+    <h:button value="Back" outcome = "/index" styleClass = "back-button"/>
+
+    <h:form id="books-table">
         <h:dataTable value="#{BookBean.getAllBooks()}" var="book">
             <h:column>
                 <f:facet name="header">Id</f:facet>
@@ -42,8 +37,8 @@
                 #{book.author.surname}
             </h:column>
             <h:column>
-                <f:facet name="header">Category</f:facet>
-                #{book.category.name}
+                <f:facet name="header">Genre</f:facet>
+                #{book.genre.name}
             </h:column>
             <h:column>
                 <f:facet name="header">Quantity</f:facet>
@@ -54,6 +49,15 @@
                 #{book.catalog.available}
             </h:column>
         </h:dataTable>
+    </h:form>
+
+    <h:form id ="menu" >
+        <br/>
+        <h:button value="Add book" outcome = "/books/addBook" styleClass = "small-button"/>
+        <br/>
+        <h:button value="Update book" outcome = "/books/editBook" styleClass = "small-button"/>
+        <br/>
+        <h:button value="Remove book" outcome = "/books/deleteBook" styleClass = "small-button"/>
     </h:form>
 </h:body>
 </html>

@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+<h:head>
+    <title>Deleting a book</title>
+    <h:outputStylesheet name="main.css"/>
+</h:head>
+
+<h:body>
+
+    <h:button value="Back" outcome="/books/books" styleClass="small-button"/>
+
+    <h:form id="book-delete-form" >
+        <h:outputLabel for="books-listbox" >Select book you want to delete:</h:outputLabel>
+        <h:selectOneMenu id="books-listbox" value="#{BookBean.selectedBookId}" required="true"
+                         requiredMessage="Required" autocomplete="off" >
+            <f:selectItem itemValue="#{null}" itemLabel="Select a book..." noSelectionOption="true" />
+            <f:selectItems value="#{BookBean.getBooksMap()}"/>
+            <f:ajax listener = "#{BookBean.onBookSelection}" event="change"/>
+        </h:selectOneMenu>
+        <h:message for="books-listbox" styleClass="error" rendered="true"/>
+        <h:commandButton value="Remove book" action="#{BookBean.deleteBook}"
+                         styleClass = "small-button"/>
+    </h:form>
+</h:body>
+
+</html>

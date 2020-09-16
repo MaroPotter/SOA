@@ -6,38 +6,33 @@
       xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
       xmlns:f="http://xmlns.jcp.org/jsf/core">
 <h:head>
-    <title>Readers</title>
+    <title>Genres</title>
     <h:outputStylesheet name="main.css"/>
 </h:head>
 
 <h:body>
-
     <h:button value="Back" outcome="/index" styleClass="back-button"/>
 
-    <h:form id="readers-table">
-        <h:dataTable value="#{ReaderBean.getAllReaders()}" var="reader">
+    <h:form id="genres-table">
+        <h:dataTable value="#{GenreBean.getAllGenres()}" var="genre">
             <h:column>
                 <f:facet name="header">Id</f:facet>
-                #{reader.id}
+                #{genre.id}
             </h:column>
             <h:column>
-                <f:facet name="header">Reader name</f:facet>
-                #{reader.name}
-            </h:column>
-            <h:column>
-                <f:facet name="header">Reader surname</f:facet>
-                #{reader.surname}
+                <f:facet name="header">Genre name</f:facet>
+                #{genre.name}
             </h:column>
         </h:dataTable>
     </h:form>
 
-    <h:form id ="menu">
+    <h:form id ="menu" >
         <br/>
-        <h:button value="Add reader" outcome = "/readers/addReader" styleClass = "small-button"/>
+        <h:button value="Add genre" outcome = "/genres/addGenre" styleClass = "small-button"/>
         <br/>
-        <h:button value="Update reader" outcome = "/readers/editReader" styleClass = "small-button"/>
+        <h:button value="Update genre" outcome = "/genres/editGenre" styleClass = "small-button"/>
         <br/>
-        <h:button value="Remove reader" outcome = "/readers/deleteReader" styleClass = "small-button"/>
+        <h:button value="Remove genre" outcome = "/genres/deleteGenre" styleClass = "small-button"/>
     </h:form>
 
 </h:body>

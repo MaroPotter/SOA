@@ -1,13 +1,12 @@
 package beans;
 
-import repository.ReaderRepository;
-import model.Reader;
+import DB.ReaderDB;
+import entities.Reader;
 
 import javax.ejb.EJB;
 import javax.faces.application.FacesMessage;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.SessionScoped;
-import javax.faces.context.FacesContext;
 import javax.faces.event.AjaxBehaviorEvent;
 import java.util.LinkedHashMap;
 import java.util.List;
@@ -17,7 +16,7 @@ import java.util.Map;
 @SessionScoped
 public class ReaderBean {
     @EJB
-    ReaderRepository readerRepository;
+    ReaderDB readerDB;
 
     String name;
     String surname;
@@ -26,21 +25,19 @@ public class ReaderBean {
 
     public List<Reader> getAllReaders()
     {
-        return readerRepository.getAllReaders();
+        return readerDB.getAllReaders();
     }
 
     public String addReader() {
-        List<Reader> readers = readerRepository.findByNameAndSurname(this.name, this.surname);
+        List<Reader> readers = readerDB.searchByNameAndSurname(this.name, this.surname);
 
         if ( !readers.isEmpty() ) {
-            FacesContext context = FacesContext.getCurrentInstance();
             FacesMessage fm = new FacesMessage( "Reader already exists");
-            context.addMessage( "reader-add-form:reader-name-field", fm);
 
             return null;
         } else {
             Reader reader = new Reader(this.name, this.surname);
-            readerRepository.addReader(reader);
+            readerDB.addReader(reader);
             this.setEmptyValues();
 
             return "/readers/readers";
@@ -48,17 +45,15 @@ public class ReaderBean {
     }
 
     public String updateReader() {
-        List<Reader> readers = readerRepository.findByNameAndSurname(this.name, this.surname);
+        List<Reader> readers = readerDB.searchByNameAndSurname(this.name, this.surname);
 
         if ( !readers.isEmpty() ) {
-            FacesContext context = FacesContext.getCurrentInstance();
             FacesMessage fm = new FacesMessage( "Reader already exists");
-            context.addMessage( "reader-update-form:reader-name-field", fm);
 
             return null;
         } else {
             Reader reader = new Reader(this.name, this.surname);
-            readerRepository.updateReader(this.getSelectedReaderId(), reader);
+            readerDB.updateReader(this.getSelectedReaderId(), reader);
             this.setEmptyValues();
             return "/readers/readers";
         }
@@ -66,14 +61,12 @@ public class ReaderBean {
 
     public String deleteReader() {
         try {
-            readerRepository.deleteReader(this.getSelectedReaderId());
+            readerDB.deleteReader(this.getSelectedReaderId());
             this.setEmptyValues();
 
             return "/readers/readers";
         } catch (Exception e) {
-            FacesContext context = FacesContext.getCurrentInstance();
-            FacesMessage fm = new FacesMessage( "Can not remove selected reader");
-            context.addMessage( "reader-delete-form:readers-listbox", fm);
+            FacesMessage fm = new FacesMessage( "Cannot remove the selected reader");
         }
 
         return null;
@@ -83,7 +76,7 @@ public class ReaderBean {
         Map<String, Integer> readersMap = new LinkedHashMap<>();
 
         String label = "";
-        List <Reader> readers = readerRepository.getAllReaders();
+        List <Reader> readers = readerDB.getAllReaders();
         for (Reader reader : readers) {
             label = reader.getName() + " " + reader.getSurname();
             readersMap.put(label, reader.getId());
@@ -93,7 +86,7 @@ public class ReaderBean {
     }
 
     public void onReaderSelection (AjaxBehaviorEvent ajaxBehaviorEvent) {
-        List<Reader> readers = readerRepository.getAllReaders();
+        List<Reader> readers = readerDB.getAllReaders();
 
         if ( this.getSelectedReaderId() == null ) {
             this.setEmptyValues();
@@ -105,12 +98,6 @@ public class ReaderBean {
                 }
             }
         }
-    }
-
-    public String onBackButton () {
-        this.setEmptyValues();
-        
-        return "/readers/readers";
     }
 
     public void setEmptyValues () {

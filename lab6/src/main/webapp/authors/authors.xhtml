@@ -7,36 +7,37 @@
       xmlns:f="http://xmlns.jcp.org/jsf/core">
 <h:head>
     <title>Authors</title>
-    <h:outputStylesheet name="css/style.css"/>
+    <h:outputStylesheet name="main.css"/>
 </h:head>
 
 <h:body>
 
-    <h:form id ="menu" class="buttons-menu-panel">
-        <h:button value="Back to previous menu" outcome = "/index" styleClass = "menu-button back-button"/>
-        <br/>
-        <h:button value="Add author" outcome = "/authors/add-form" styleClass = "menu-button add-button"/>
-        <br/>
-        <h:button value="Update author" outcome = "/authors/update-form" styleClass = "menu-button edit-button"/>
-        <br/>
-        <h:button value="Remove author" outcome = "/authors/delete-form" styleClass = "menu-button remove-button"/>
-    </h:form>
+    <h:button value="Back" outcome = "/index" styleClass = "back-button"/>
 
-    <h:form id="authors-table" class="table-container">
+    <h:form id="authors-table">
         <h:dataTable value="#{AuthorBean.getAllAuthors()}" var="author">
             <h:column>
                 <f:facet name="header">Id</f:facet>
                 #{author.id}
             </h:column>
             <h:column>
-                <f:facet name="header">Author name</f:facet>
+                <f:facet name="header">Author Name</f:facet>
                 #{author.name}
             </h:column>
             <h:column>
-                <f:facet name="header">Author surname</f:facet>
+                <f:facet name="header">Author Surname</f:facet>
                 #{author.surname}
             </h:column>
         </h:dataTable>
+    </h:form>
+
+    <h:form id ="menu" >
+        <br/>
+        <h:button value="Add author" outcome = "/authors/addAuthor" styleClass = "small-button"/>
+        <br/>
+        <h:button value="Update author" outcome = "/authors/editAuthor" styleClass = "small-button"/>
+        <br/>
+        <h:button value="Remove author" outcome = "/authors/deleteAuthor" styleClass = "small-button"/>
     </h:form>
 
 </h:body>

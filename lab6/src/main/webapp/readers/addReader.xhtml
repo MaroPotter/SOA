@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+<h:head>
+    <title>Adding a reader</title>
+    <h:outputStylesheet name="main.css"/>
+</h:head>
+
+<body>
+
+<h:button value="Back" outcome="/readers/readers" styleClass="back-button"/>
+
+<h:form id = "reader-add-form">
+    <h:outputLabel for="reader-name-field" >Reader Name:</h:outputLabel>
+    <h:inputText id="reader-name-field" value="#{ReaderBean.name}"
+                 required="true" requiredMessage="Required" autocomplete="off"/>
+    <h:message for="reader-name-field" styleClass="error" rendered="true"/>
+
+    <h:outputLabel for="reader-surname-field">Reader Surname:</h:outputLabel>
+    <h:inputText id="reader-surname-field" value="#{ReaderBean.surname}"
+                 required="true" requiredMessage="Required" autocomplete="off"/>
+    <h:message for="reader-surname-field" styleClass="error" rendered="true"/>
+    <h:commandButton value="Add reader" action="#{ReaderBean.addReader}"
+                     styleClass = "small-button"/>
+</h:form>
+
+</body>
+
+</html>

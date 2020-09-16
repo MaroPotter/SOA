@@ -1,0 +1,129 @@
+body {
+    background: #895024;
+    font-family: "Comic Sans MS";
+}
+
+table {
+    width: 50%;
+    background: #4d1308;
+    border-radius: 0.25em;
+    border-collapse: collapse;
+    margin: 1em;
+}
+
+th {
+    border-bottom: 1px solid #364043;
+    color: #E2B842;
+    background-color: #4d1308;
+    font-size: 0.85em;
+    font-weight: 600;
+    padding: 0.5em 1em;
+    text-align: center;
+}
+
+td {
+    color: #E2B842;
+    font-weight: 400;
+    padding: 0.65em 1em;
+    text-align: center;
+    width: 15%
+}
+
+select{
+    background-color: #895024;
+    color: #E2B842;
+    font-family: Algerian;
+    height: 30px;
+    width: 200px;
+
+}
+input {
+    display: block;
+    background-color: #895024;
+    color: #E2B842;
+    font-family: "Comic Sans MS";
+    margin: 5px 15px;
+}
+
+label {
+    color: #4d1308;
+    font-family: "Comic Sans MS";
+    margin: 5px 15px;
+
+}
+
+h1 {
+    font-family: Algerian;
+    color: #4d1308;
+    font-size: 72px;
+    margin: 10px;
+    text-align: center;
+}
+
+.button {
+    text-align: center;
+    display: inline-block;
+    font-size: 20px;
+    font-family: "Comic Sans MS";
+    color: #E2B842;
+    margin: 0px;
+    cursor: pointer;
+    background-color: #4d1308;
+    height: 100px;
+    width: 100%;
+}
+.small-button {
+    text-align: center;
+    display: inline-block;
+    font-size: 20px;
+    font-family: "Comic Sans MS";
+    color: #E2B842;
+    margin: 5px 15px;
+    cursor: pointer;
+    background-color: #4d1308;
+    height: 50px;
+    width: 33%
+}
+.back-button {
+    text-align: center;
+    display: inline-block;
+    font-size: 20px;
+    font-family: "Comic Sans MS";
+    color: #E2B842;
+    margin: 5px 15px;
+    cursor: pointer;
+    background-color: #4d1308;
+    height: 40px;
+    width: 10%;
+}
+
+.catalog-button {
+    text-align: center;
+    display: inline-block;
+    font-size: 20px;
+    font-family: "Comic Sans MS";
+    color: #E2B842;
+    margin: 0px;
+    cursor: pointer;
+    background-color: #4d1308;
+    height: 50px;
+    width: 200px;
+}
+
+.catalog-table {
+
+    width: 70%;
+    background: #4d1308;
+    border-radius: 0.25em;
+    border-collapse: collapse;
+    margin: 1em;
+}
+
+.buttons-group {
+    text-align: center;
+}
+
+.error {
+    color: red;
+    font-size: 20px;
+}

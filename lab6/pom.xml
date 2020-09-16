@@ -5,11 +5,11 @@
   <modelVersion>4.0.0</modelVersion>
 
   <groupId>org.example</groupId>
-  <artifactId>advanced-book-management</artifactId>
+  <artifactId>Library</artifactId>
   <version>1.0-SNAPSHOT</version>
   <packaging>war</packaging>
 
-  <name>advanced-book-management Maven Webapp</name>
+  <name>Library Maven Webapp</name>
   <!-- FIXME change it to the project's website -->
   <url>http://www.example.com</url>
 
@@ -21,14 +21,14 @@
 
   <dependencies>
 
-    <!-- https://mvnrepository.com/artifact/org.clojure/java.jdbc -->
+    <!-- https://mvnservice.com/artifact/org.clojure/java.jdbc -->
     <dependency>
       <groupId>org.clojure</groupId>
       <artifactId>java.jdbc</artifactId>
       <version>0.7.9</version>
     </dependency>
 
-    <!-- https://mvnrepository.com/artifact/org.hibernate/hibernate-core -->
+    <!-- https://mvnservice.com/artifact/org.hibernate/hibernate-core -->
     <dependency>
       <groupId>org.hibernate</groupId>
       <artifactId>hibernate-core</artifactId>
@@ -59,7 +59,7 @@
   </dependencies>
 
   <build>
-    <finalName>advanced-book-management</finalName>
+    <finalName>library</finalName>
     <pluginManagement><!-- lock down plugins versions to avoid using Maven defaults (may be moved to parent pom) -->
       <plugins>
         <plugin>

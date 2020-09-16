@@ -7,23 +7,76 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="1e4cf2df-177e-4ba0-9e4a-c1b41da79c02" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Bookshop.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/resources/main.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../lab4/src/main/webapp/userinfo.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/../../lab4/src/main/webapp/userinfo.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/api/DB_API.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../lab6/src/main/webapp/resources/main.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../lab4/lab4updates.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../lab4/target/Lab4Test-1.0.war" beforeDir="false" afterPath="$PROJECT_DIR$/../../lab4/target/Lab4Test-1.0.war" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../lab4/target/Lab4Test-1.0/login.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/../../lab4/target/Lab4Test-1.0/login.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/javax.faces-2.2.1.jar" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/BookBean.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/BookBean.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/api/DatabaseAPI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/api/DatabaseAPI.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/database/BookEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/database/BookEntity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/database/Database.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/database/Database.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/api/DatabaseAPI.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/database/BookEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/db/Book.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/database/Database.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/db/DB.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/META-INF/persistence.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/META-INF/persistence.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/faces-config.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/faces-config.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/add-form.xhtml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/add-form.xhtml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/delete-form.xhtml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/delete-form.xhtml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/lib/postgresql-42.2.15.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/add-form.xhtml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/addItem.xhtml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/delete-form.xhtml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/deleteItem.xhtml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/index.xhtml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/index.xhtml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/resources/css/style.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/update-form.xhtml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/update-form.xhtml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/update-form.xhtml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/editItem.xhtml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Bookstore/.idea/compiler.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Bookstore/.idea/jarRepositories.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Bookstore/.idea/libraries/Java_EE_6_Java_EE_6.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Bookstore/.idea/libraries/Maven__antlr_antlr_2_7_7.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Bookstore/.idea/libraries/Maven__com_fasterxml_classmate_1_5_1.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Bookstore/.idea/libraries/Maven__com_sun_istack_istack_commons_runtime_3_0_7.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Bookstore/.idea/libraries/Maven__com_sun_xml_fastinfoset_FastInfoset_1_2_15.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Bookstore/.idea/libraries/Maven__javax_activation_javax_activation_api_1_2_0.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Bookstore/.idea/libraries/Maven__javax_faces_jsf_api_2_1.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Bookstore/.idea/libraries/Maven__javax_persistence_javax_persistence_api_2_2.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Bookstore/.idea/libraries/Maven__javax_xml_bind_jaxb_api_2_3_1.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Bookstore/.idea/libraries/Maven__net_bytebuddy_byte_buddy_1_10_10.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Bookstore/.idea/libraries/Maven__org_apiguardian_apiguardian_api_1_1_0.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Bookstore/.idea/libraries/Maven__org_dom4j_dom4j_2_1_3.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Bookstore/.idea/libraries/Maven__org_glassfish_jaxb_jaxb_runtime_2_3_1.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Bookstore/.idea/libraries/Maven__org_glassfish_jaxb_txw2_2_3_1.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Bookstore/.idea/libraries/Maven__org_hibernate_common_hibernate_commons_annotations_5_1_0_Final.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Bookstore/.idea/libraries/Maven__org_hibernate_hibernate_core_5_4_18_Final.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Bookstore/.idea/libraries/Maven__org_hibernate_hibernate_entitymanager_5_4_18_Final.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Bookstore/.idea/libraries/Maven__org_javassist_javassist_3_24_0_GA.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Bookstore/.idea/libraries/Maven__org_jboss_jandex_2_1_3_Final.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Bookstore/.idea/libraries/Maven__org_jboss_logging_jboss_logging_3_3_2_Final.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Bookstore/.idea/libraries/Maven__org_jboss_spec_javax_transaction_jboss_transaction_api_1_2_spec_1_1_1_Final.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Bookstore/.idea/libraries/Maven__org_junit_jupiter_junit_jupiter_api_5_6_2.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Bookstore/.idea/libraries/Maven__org_junit_jupiter_junit_jupiter_engine_5_6_2.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Bookstore/.idea/libraries/Maven__org_junit_platform_junit_platform_commons_1_6_2.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Bookstore/.idea/libraries/Maven__org_junit_platform_junit_platform_engine_1_6_2.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Bookstore/.idea/libraries/Maven__org_jvnet_staxex_stax_ex_1_8.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Bookstore/.idea/libraries/Maven__org_opentest4j_opentest4j_1_2_0.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Bookstore/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Bookstore/.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Bookstore/.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Bookstore/.idea/workspace.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Bookstore/Bookstore.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Bookstore/lib/javax.annotation.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Bookstore/lib/javax.ejb.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Bookstore/lib/javax.jms.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Bookstore/lib/javax.resource.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Bookstore/lib/javax.servlet.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Bookstore/lib/javax.servlet.jsp.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Bookstore/lib/javax.servlet.jsp.jstl.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Bookstore/pom.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Bookstore/src/main/java/BookBean.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Bookstore/src/main/java/api/DatabaseAPI.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Bookstore/src/main/java/database/BookEntity.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Bookstore/src/main/java/database/Database.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Bookstore/src/main/resources/META-INF/persistence.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../lab5 SOA.txt" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../../lab6/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../lab6/.idea/compiler.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../lab6/.idea/lab6.iml" beforeDir="false" afterPath="$PROJECT_DIR$/../../lab6/.idea/lab6.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../lab6/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../lab6/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../lab6/src/main/webapp/authors/add-form.xhtml" beforeDir="false" afterPath="$PROJECT_DIR$/../../lab6/src/main/webapp/authors/add-form.xhtml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../lab6/src/main/webapp/index.xhtml" beforeDir="false" afterPath="$PROJECT_DIR$/../../lab6/src/main/webapp/index.xhtml" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -153,7 +206,8 @@
       <updated>1599688610496</updated>
       <workItem from="1599688613184" duration="1846000" />
       <workItem from="1599733979995" duration="2330000" />
-      <workItem from="1599739497689" duration="16439000" />
+      <workItem from="1599739497689" duration="19860000" />
+      <workItem from="1599912627794" duration="880000" />
     </task>
     <servers />
   </component>

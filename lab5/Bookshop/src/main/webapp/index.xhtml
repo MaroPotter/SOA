@@ -17,13 +17,6 @@
         <h1> THE BOOKSTORE </h1>
 
     </h:panelGroup>
-<h:form id = "buttons-group">
-    <h:panelGrid columns="3" styleClass = "buttons-group">
-        <h:button value="ADD" outcome = "add-form" styleClass = "button"/>
-        <h:button value="EDIT" outcome = "update-form" styleClass = "button"/>
-        <h:button value="DELETE" outcome = "delete-form" styleClass = "button"/>
-    </h:panelGrid>
-</h:form>
     <h:form id = "books-table">
         <h:dataTable value="#{BookBean.getAllBooks()}" var="book"
                      styleClass = "table" headerClass = "table-header">
@@ -56,6 +49,13 @@
                 #{book.price}
             </h:column>
         </h:dataTable>
+    </h:form>
+    <h:form id = "buttons-group">
+        <h:panelGrid columns="3" styleClass = "buttons-group">
+            <h:button value="ADD" outcome = "addItem" styleClass = "button"/>
+            <h:button value="EDIT" outcome = "editItem" styleClass = "button"/>
+            <h:button value="DELETE" outcome = "deleteItem" styleClass = "button"/>
+        </h:panelGrid>
     </h:form>
 
 </h:body>

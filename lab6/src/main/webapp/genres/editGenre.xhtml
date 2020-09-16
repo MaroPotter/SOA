@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+<h:head>
+    <title>Updating a genre</title>
+    <h:outputStylesheet name="main.css"/>
+</h:head>
+
+<body>
+
+<h:button value="Back" outcome="/genres/genres" styleClass="back-button"/>
+
+<h:form id="genre-update-form">
+    <h:outputLabel for="genres-listbox" >Select genre you want to update:</h:outputLabel>
+    <h:selectOneMenu id="genres-listbox" value="#{GenreBean.selectedGenreId}" >
+        <f:selectItem itemValue="#{null}" itemLabel="Select a genre..." noSelectionOption="true" />
+        <f:selectItems value="#{GenreBean.getGenresMap()}"/>
+        <f:ajax render="genre-update-form" listener = "#{GenreBean.onGenreSelection}" event="change"/>
+    </h:selectOneMenu>
+    <br></br>
+    <h:outputLabel for="genre-name-field" >Genre Name:</h:outputLabel>
+    <h:inputText id="genre-name-field" value="#{GenreBean.name}"
+                 required="true" requiredMessage="Required" autocomplete="off"/>
+    <h:message for="genre-name-field" styleClass="error" rendered="true"/>
+    <h:commandButton value="Save changes" action="#{GenreBean.updateGenre}"
+                     styleClass="small-button"/>
+</h:form>
+
+</body>
+
+</html>

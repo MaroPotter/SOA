@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+<h:head>
+    <title>Borrow a book</title>
+    <h:outputStylesheet name="main.css"/>
+</h:head>
+
+<body>
+
+<h:button value="Back" outcome="/borrows/borrows" styleClass="back-button"/>
+
+<h:form id = "borrow-book-form">
+    <h:outputLabel for="readers-listbox" >Select reader who will borrow the book:</h:outputLabel>
+    <h:selectOneMenu id="readers-listbox" value="#{BorrowBean.selectedReaderId}"
+                     required="true" requiredMessage="Required" autocomplete="off" >
+        <f:selectItem itemValue="#{null}" itemLabel="Select a reader..."/>
+        <f:selectItems value="#{ReaderBean.getReadersMap()}"/>
+    </h:selectOneMenu>
+    <h:message for="readers-listbox" styleClass="error" rendered="true"/>
+
+    <h:outputLabel for="books-listbox" >Select a book:</h:outputLabel>
+    <h:selectOneMenu id="books-listbox" value="#{BorrowBean.selectedBookId}"
+                     required="true" requiredMessage="Required" autocomplete="off" >
+        <f:selectItem itemValue="#{null}" itemLabel="Select a book..."/>
+        <f:selectItems value="#{BookBean.getBooksMap()}"/>
+    </h:selectOneMenu>
+    <h:message for="books-listbox" styleClass="error" rendered="true"/>
+    <h:commandButton value="Borrow book" action ="#{BorrowBean.borrowBook}"
+                     styleClass = "small-button"/>
+
+</h:form>
+
+</body>
+
+</html>

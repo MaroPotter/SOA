@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+<h:head>
+    <title>Updating a book</title>
+    <h:outputStylesheet name="main.css"/>
+</h:head>
+
+<h:body>
+
+    <h:button value="Back" outcome="/books/books" styleClass="back-button"/>
+
+    <h:form id = "book-update-form">
+        <h:outputLabel for="authors-listbox" >Select a book you want to update:</h:outputLabel>
+        <h:selectOneMenu id="authors-listbox" value="#{BookBean.selectedBookId}" >
+            <f:selectItem itemValue="#{null}" itemLabel="Select a book..." noSelectionOption="true" />
+            <f:selectItems value="#{BookBean.getBooksMap()}"/>
+            <f:ajax render="author-update-form" listener = "#{BookBean.onBookSelection}" event="change"/>
+        </h:selectOneMenu>
+    <br></br>
+        <h:outputLabel for="book-title-field" >Book Title:</h:outputLabel>
+        <h:inputText id="book-title-field" value="#{BookBean.title}"
+                     required="true" requiredMessage="Required" autocomplete="off"/>
+        <h:message for="book-title-field" styleClass="error" rendered="true"/>
+
+        <h:outputLabel for="book-isbn-field" >Book ISBN Number:</h:outputLabel>
+        <h:inputText type="number" id="book-isbn-field" value="#{BookBean.ISBNNumber}"
+                     required="true" requiredMessage="Required" autocomplete="off"/>
+        <h:message for="book-isbn-field" styleClass="error" rendered="true"/>
+
+        <h:outputLabel for="author-name-field" >Author Name:</h:outputLabel>
+        <h:inputText id="author-name-field" value="#{BookBean.authorName}"
+                     required="true" requiredMessage="Required" autocomplete="off" autocomplete="off"/>
+        <h:message for="author-name-field" styleClass="error" rendered="true"/>
+
+        <h:outputLabel for="author-surname-field" >Author Surname:</h:outputLabel>
+        <h:inputText id="author-surname-field" value="#{BookBean.authorSurname}"
+                     required="true" requiredMessage="Required" autocomplete="off" autocomplete="off"/>
+        <h:message for="author-surname-field" styleClass="error" rendered="true"/>
+
+        <h:outputLabel for="book-genre-field" >Book genre:</h:outputLabel>
+        <h:inputText id="book-genre-field" value="#{BookBean.genre}"
+                     required="true" requiredMessage="Required" autocomplete="off" autocomplete="off"/>
+        <h:message for="book-genre-field" styleClass="error" rendered="true"/>
+
+        <h:outputLabel for="book-quantity-field" >Book quantity:</h:outputLabel>
+        <h:inputText id="book-quantity-field" value="#{BookBean.quantity}"
+                     required="true" requiredMessage="Required" autocomplete="off" autocomplete="off"/>
+        <h:message for="book-quantity-field" styleClass="error" rendered="true"/>
+
+    <h:commandButton value="Save changes" action="#{BookBean.updateBook}"
+                     styleClass="small-button"/>
+</h:form>
+
+</h:body>
+
+</html>

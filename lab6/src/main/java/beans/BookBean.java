@@ -1,7 +1,7 @@
 package beans;
 
-import model.Book;
-import repository.BookRepository;
+import entities.Book;
+import DB.BookDB;
 
 import javax.ejb.EJB;
 import javax.faces.bean.ManagedBean;
@@ -16,32 +16,40 @@ import java.util.Map;
 @SessionScoped
 public class BookBean {
     @EJB
-    BookRepository bookRepository;
+    BookDB bookDB;
 
     private String title;
     private BigInteger ISBNNumber;
     private String authorName;
     private String authorSurname;
-    private String category;
+    private String genre;
     private Integer quantity;
     private Integer available;
 
     private Integer selectedBookId;
 
     public List<Book> getAllBooks() {
-        return bookRepository.getAllBooks();
+        return bookDB.getAllBooks();
     }
 
     public String addBook() {
-        bookRepository.addBook(this.getTitle(), this.getISBNNumber(), this.getAuthorName(), this.getAuthorSurname(),
-                this.getCategory(), this.getQuantity());
+        bookDB.addBook(this.getTitle(), this.getISBNNumber(), this.getAuthorName(), this.getAuthorSurname(),
+                this.getGenre(), this.getQuantity());
+        this.setEmptyValues();
+
+        return "/books/books";
+    }
+
+    public String updateBook() {
+        bookDB.updateBook(this.getSelectedBookId(), this.getTitle(), this.getISBNNumber(), this.getAuthorName(), this.getAuthorSurname(),
+                this.getGenre(), this.getQuantity());
         this.setEmptyValues();
 
         return "/books/books";
     }
 
     public String deleteBook() {
-        bookRepository.deleteBook(this.getSelectedBookId());
+        bookDB.deleteBook(this.getSelectedBookId());
         this.setEmptyValues();
 
         return "/books/books";
@@ -51,7 +59,7 @@ public class BookBean {
         Map<String, Integer> booksMap = new LinkedHashMap<>();
 
         String label = "";
-        List <Book> books = bookRepository.getAllBooks();
+        List <Book> books = bookDB.getAllBooks();
         for (Book book : books) {
             label = book.getTitle() + ", " + book.getAuthor().getName() + " " + book.getAuthor().getSurname();
             booksMap.put(label, book.getId());
@@ -61,7 +69,7 @@ public class BookBean {
     }
 
     public void onBookSelection (AjaxBehaviorEvent ajaxBehaviorEvent) {
-        List<Book> books = bookRepository.getAllBooks();
+        List<Book> books = bookDB.getAllBooks();
 
         if ( this.getSelectedBookId() == null ) {
             this.setEmptyValues();
@@ -72,17 +80,11 @@ public class BookBean {
                     this.setISBNNumber(book.getISBNNumber());
                     this.setAuthorName(book.getAuthor().getName());
                     this.setAuthorSurname(book.getAuthor().getSurname());
-                    this.setCategory(book.getCategory().getName());
+                    this.setGenre(book.getGenre().getName());
                     this.setQuantity(book.getCatalog().getQuantity());
                 }
             }
         }
-    }
-
-    public String onBackButton () {
-        this.setEmptyValues();
-
-        return "/books/books";
     }
 
     public void setEmptyValues() {
@@ -90,7 +92,7 @@ public class BookBean {
         this.setISBNNumber(null);
         this.setAuthorName(null);
         this.setAuthorSurname(null);
-        this.setCategory(null);
+        this.setGenre(null);
         this.setQuantity(null);
     }
 
@@ -126,12 +128,12 @@ public class BookBean {
         this.authorSurname = authorSurname;
     }
 
-    public String getCategory() {
-        return category;
+    public String getGenre() {
+        return genre;
     }
 
-    public void setCategory(String category) {
-        this.category = category;
+    public void setGenre(String genre) {
+        this.genre = genre;
     }
 
     public Integer getQuantity() {
@@ -140,14 +142,6 @@ public class BookBean {
 
     public void setQuantity(Integer quantity) {
         this.quantity = quantity;
-    }
-
-    public Integer getAvailable() {
-        return available;
-    }
-
-    public void setAvailable(Integer available) {
-        this.available = available;
     }
 
     public Integer getSelectedBookId() {

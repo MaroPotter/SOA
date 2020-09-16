@@ -5,7 +5,7 @@
     http://xmlns.jcp.org/xml/ns/javaee/web-facesconfig_2_2.xsd">
 
     <navigation-rule>
-        <from-view-id>/add-form.xhtml</from-view-id>
+        <from-view-id>/addItem.xhtml</from-view-id>
         <navigation-case>
             <from-action>#{BookBean.addBook}</from-action>
             <from-outcome>BOOK_ADDED</from-outcome>
@@ -21,7 +21,7 @@
     </navigation-rule>
 
     <navigation-rule>
-        <from-view-id>/update-form.xhtml</from-view-id>
+        <from-view-id>/editItem.xhtml</from-view-id>
         <navigation-case>
             <from-action>#{BookBean.updateBook}</from-action>
             <from-outcome>BOOK_UPDATED</from-outcome>
@@ -36,7 +36,7 @@
         </navigation-case>
     </navigation-rule>
     <navigation-rule>
-        <from-view-id>/delete-form.xhtml</from-view-id>
+        <from-view-id>/deleteItem.xhtml</from-view-id>
         <navigation-case>
             <from-action>#{BookBean.deleteBook}</from-action>
             <from-outcome>BOOK_DELETED</from-outcome>

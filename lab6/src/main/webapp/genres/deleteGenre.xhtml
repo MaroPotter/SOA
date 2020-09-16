@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+<h:head>
+    <title>Deleting a genre</title>
+    <h:outputStylesheet name="main.css"/>
+</h:head>
+
+<body>
+
+<h:button value="Back" outcome="/genres/genres" styleClass="back-button"/>
+
+<h:form id="genre-delete-form" >
+    <h:outputLabel for="genres-listbox" >Select genre you want to delete:</h:outputLabel>
+    <h:selectOneMenu id="genres-listbox" value="#{GenreBean.selectedGenreId}" required="true"
+                     requiredMessage="Required" autocomplete="off" >
+        <f:selectItem itemValue="#{null}" itemLabel="Select a genre..." noSelectionOption="true" />
+        <f:selectItems value="#{GenreBean.getGenresMap()}"/>
+        <f:ajax listener = "#{GenreBean.onGenreSelection}" event="change"/>
+    </h:selectOneMenu>
+    <h:message for="genres-listbox" styleClass="error" rendered="true"/>
+    <h:commandButton value="Remove genre" action="#{GenreBean.deleteGenre}"
+                     styleClass = "small-button"/>
+</h:form>
+
+</body>
+
+</html>
