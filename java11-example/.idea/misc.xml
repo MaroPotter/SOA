@@ -2,10 +2,10 @@
 <project version="4">
   <component name="ExternalStorageConfigurationManager" enabled="true" />
   <component name="FrameworkDetectionExcludesConfiguration">
-    <file type="ejb" url="file://$PROJECT_DIR$/lab1-connector" />
-    <file type="ejb" url="file://$PROJECT_DIR$/lab1-ejb" />
-    <file type="javaeeApplication" url="file://$PROJECT_DIR$/lab1-ear" />
-    <file type="web" url="file://$PROJECT_DIR$/lab1-web" />
+    <file type="ejb" url="file://$PROJECT_DIR$/db" />
+    <file type="ejb" url="file://$PROJECT_DIR$/soap" />
+    <file type="javaeeApplication" url="file://$PROJECT_DIR$/ear" />
+    <file type="web" url="file://$PROJECT_DIR$/core" />
   </component>
   <component name="MavenProjectsManager">
     <option name="originalFiles">

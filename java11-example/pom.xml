@@ -33,10 +33,10 @@
         </license>
     </licenses>
     <modules>
-        <module>lab1-ejb</module>
-        <module>lab1-connector</module>		
-        <module>lab1-web</module>
-        <module>lab1-ear</module>
+        <module>soap</module>
+        <module>db</module>
+        <module>core</module>
+        <module>ear</module>
     </modules>
 
     <properties>
@@ -118,6 +118,11 @@
                 <version>${version.jboss.bom}</version>
                 <type>pom</type>
                 <scope>import</scope>
+            </dependency>
+            <dependency>
+                <groupId>jboss</groupId>
+                <artifactId>jboss-annotations-ejb3</artifactId>
+                <version>4.2.2.GA</version>
             </dependency>
 
         </dependencies>

@@ -6,10 +6,10 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="lab1-web" />
-        <module name="lab1-ejb" />
-        <module name="lab1-ear" />
-        <module name="lab1-connector" />
+        <module name="core" />
+        <module name="soap" />
+        <module name="ear" />
+        <module name="db" />
       </profile>
     </annotationProcessing>
   </component>
